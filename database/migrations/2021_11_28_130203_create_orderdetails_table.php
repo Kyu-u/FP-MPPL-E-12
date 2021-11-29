@@ -16,6 +16,14 @@ class CreateOrderdetailsTable extends Migration
         Schema::create('orderdetails', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('user_id');
+            $table->integer('cart_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address');
+            $table->string('postalcode');
+            $table->string('orderstatus');
         });
     }
 

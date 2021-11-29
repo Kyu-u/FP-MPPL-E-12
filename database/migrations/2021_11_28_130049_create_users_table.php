@@ -17,10 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->string('password');
             $table->string('email');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('postalcode');
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('postalcode')->nullable();
+            $table->integer('isadmin')->nullable();
         });
     }
 

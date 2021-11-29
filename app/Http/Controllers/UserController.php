@@ -1,0 +1,100 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
+
+class UserController extends Controller
+{
+    public function signuppage()
+    {
+        // dd('a');
+        return view('signup');
+    }  
+    public function signinpage()
+    {   
+        $test = ['a','b'];
+        $test2 = 'dwada';
+        return view('signin', ['tas'=>$test, 'tos'=>$test2]);
+    }
+    public function adminpage()
+    {
+        // dd('a');
+        return view('admin_landing');
+    }
+    
+    public function editprofilepage(){
+        return view('editprofile');
+    }
+    public function signup(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:8',
+
+        ]);
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password'])
+        ]);
+        return redirect('/');
+
+    }
+
+    public function signin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+
+        ]);
+        
+        // $cridentials = $request->only('email','password');
+        // if(Auth::attempt($cridentials)){
+        //     return redirect('/');
+
+        // }
+        $email = $request->email;
+        $password = $request->password;
+        if (Auth::attempt(['email' => $email, 'password' => $password, 'isadmin' => 1])) {
+            return redirect('/admin');
+        }
+        else if(Auth::attempt(['email' => $email, 'password' => $password, 'isadmin' => 0])) {
+            return redirect('/');
+
+        }
+        return redirect('/signup');
+
+    }
+
+    public function editprofile(Request $request)
+    {
+        $userid = Auth::id();
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'phone' => 'required',
+            'address' => 'required',
+            'postalcode' => 'required',
+        ]);
+
+        User::where('id',$userid)->update([
+			'name' => $request->name,
+			'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'postalcode' => $request->postalcode,
+		]);
+
+        return redirect('/editprofile');
+
+    }
+}

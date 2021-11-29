@@ -27,7 +27,7 @@
                 <ul class="flex justify-center">
                     <li class="px-8 py-4 text-white font-semibold hover:text-gray-300 text-xl">
                         <a href="">
-                            <img src="/public/images/senikersku.webp" alt="" class="h-10">
+                            <img src="/images/senikersku.webp" alt="" class="h-10">
                         </a>
                     </li>
                     <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
@@ -47,13 +47,13 @@
             <div class="w-2/5 py-5">
                 <ul class="flex justify-end px-20 mr-10">
                     <li class="px-2 text-white font-semibold hover:text-gray-300">
-                        <a href="/public/wishlist.html"><img src="/public/images/wishlist.png" alt="" class="w-8 h-8"></a>
+                        <a href="/public/wishlist.html"><img src="/images/wishlist.png" alt="" class="w-8 h-8"></a>
                     </li>
                     <li class="px-2 text-white font-semibold hover:text-gray-300">
-                        <a href="/public/shopping_cart.html"><img src="/public/images/cart.png" alt="" class="w-8 h-8"></a>
+                        <a href="/public/shopping_cart.html"><img src="/images/cart.png" alt="" class="w-8 h-8"></a>
                     </li>
                     <li class="px-2 text-white font-semibold hover:text-gray-300">
-                        <a href="/public/akun.html"><img src="/public/images/account.png" alt="" class="w-8 h-8"></a>
+                        <a href="{{route('editprofile')}}"><img src="/images/account.png" alt="" class="w-8 h-8"></a>
                     </li>
                 </ul>
             </div>

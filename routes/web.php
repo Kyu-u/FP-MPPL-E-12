@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
+
+
+
+Route::get('/signup',[UserController::class,'signuppage'])->name('signup');
+Route::post('/signup/post',[UserController::class,'signup'])->name('signup.post');
+
+Route::get('/signin',[UserController::class,'signinpage'])->name('signin');
+Route::post('/signin/post',[UserController::class,'signin'])->name('signin.post');
+
+Route::get('/admin',[UserController::class,'adminpage'])->name('admin');
+
+Route::get('/editprofile',[UserController::class,'editprofilepage'])->name('editprofile');
+Route::post('/editprofile/post',[UserController::class,'editprofile'])->name('editprofile.post');
+
+
+
+
+
+
+
+
+
