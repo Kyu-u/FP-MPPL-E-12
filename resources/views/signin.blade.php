@@ -52,23 +52,23 @@
                 <div class="flex px-48">
                     <div class="flex items-end">
                         <button class="bg-white rounded-full w-8 h-8" type="button">
-                            <a href="/public/landing_page.html"><img src="/public/images/facebook.png" alt=""
+                            <a href="/public/landing_page.html"><img src="/images/facebook.png" alt=""
                                     class="w-8 h-8"></a>
                         </button>
                         <button class="bg-white rounded-full w-8 h-8 ml-10" type="button">
-                            <a href="/public/admin_home.html"><img src="/public/images/google.png" alt=""
+                            <a href="/public/admin_home.html"><img src="/images/google.png" alt=""
                                     class="w-8 h-8"></a>
                         </button>
                     </div>
                     <div class="flex flex-col items-end ml-72">
                         <button class="bg-black rounded-xl px-6 py-2 text-sm border-4 text-white text-xl font-semibold"
                             type="submit">
-                            {{-- <a href="/public/landing_page.html">Sign In</a> --}}
+                            <a href="/public/landing_page.html">Sign In</a> 
                         </button>
                     </div>
-                    <!-- <div class="pt-14">
-                        <img src="/public/images/google.png" alt="" class="w-8">
-                    </div> -->
+                    <div class="pt-14">
+                        <!-- <img src="/images/google.png" alt="" class="w-8"> -->
+                    </div> 
                 </div>
                 <div class="px-48 pt-24">
                     <span class="font-semibold">Don't have an account?</h2>
@@ -76,9 +76,9 @@
                                 up</span></a>
                 </div>
             </div>
-            <div style="background-image: url('/public/images/signin.png')"
+            <div style="background-image: url('/images/signin.png')"
                 class="bg-cover bg-local relative col-span-2 col-start-4">
-                <!-- <img src="/public/images/signup.png" alt="" class="object-contain"> -->
+                <img src="/images/signup.png" alt="" class="object-contain">
             </div>
         </div>
     </form>
