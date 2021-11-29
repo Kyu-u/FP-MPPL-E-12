@@ -67,7 +67,7 @@
                         </button>
                     </div>
                     <div class="pt-14">
-                        <img src="/images/google.png" alt="" class="w-8">
+                        <img src="/public/images/google.png" alt="" class="w-8">
                     </div>
                 </div>
                 <div class="px-48 pt-24">
