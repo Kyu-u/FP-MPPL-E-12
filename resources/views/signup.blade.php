@@ -28,7 +28,7 @@
         <div class="grid grid-cols-5">
             <div style="background-image: url('/images/signup.png')"
                 class="bg-cover h-landing bg-local relative col-span-2">
-                <!-- <img src="/public/images/signup.png" alt="" class="object-contain"> -->
+                <img src="/images/signup.png" alt="" class="object-contain"> 
             </div>
             <div class="flex flex-col col-start-3 col-span-3">
                 <div class="py-10 text-center">
