@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,10 @@ Route::get('/admin',[UserController::class,'adminpage'])->name('admin');
 Route::get('/editprofile',[UserController::class,'editprofilepage'])->name('editprofile');
 Route::post('/editprofile/post',[UserController::class,'editprofile'])->name('editprofile.post');
 
+Route::get('/additem',[ProductController::class,'addpage'])->name('additem');
+Route::post('/additem/post',[ProductController::class,'store'])->name('additem.post');
+
+Route::resource('products', 'App\Http\Controllers\ProductController'); 
 
 
 
