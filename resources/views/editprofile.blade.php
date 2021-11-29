@@ -36,11 +36,14 @@
                     </button>
                 </li>
                 <li class="pt-8">
-                    <button
-                        class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
-                        type="button">
-                        <a href="/public/signin.html">Sign Out</a>
-                    </button>
+                    <form method="POST" action="{{route('signout.post')}}">
+                        @csrf
+                        <button
+                            class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
+                            type="submit">
+                            Sign Out
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>

@@ -26,6 +26,9 @@ Route::post('/signup/post',[UserController::class,'signup'])->name('signup.post'
 Route::get('/signin',[UserController::class,'signinpage'])->name('signin');
 Route::post('/signin/post',[UserController::class,'signin'])->name('signin.post');
 
+Route::post('/signout/post',[UserController::class,'signout'])->name('signout.post');
+
+
 Route::get('/admin',[UserController::class,'adminpage'])->name('admin');
 
 Route::get('/editprofile',[UserController::class,'editprofilepage'])->name('editprofile');
