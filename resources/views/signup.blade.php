@@ -57,7 +57,7 @@
                 <div class="flex flex-col items-end pt-14 px-48">
                     <button class="bg-black rounded-lg px-6 py-2 text-sm border-4 text-white font-semibold"
                         type="submit">
-                        {{-- <a href="/public/landing_page.html">Sign Up</a> --}}
+                        <a href="/public/landing_page.html">Sign Up</a>
                     </button>
                 </div>
                 <div class="px-48 py-24">
