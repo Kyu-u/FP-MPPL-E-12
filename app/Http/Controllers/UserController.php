@@ -40,11 +40,12 @@ class UserController extends Controller
             'password' => 'required|min:8',
 
         ]);
-        User::create([
+        $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password'])
         ]);
+        Auth::loginUsingId($user);
         return redirect('/');
 
     }
@@ -57,20 +58,25 @@ class UserController extends Controller
 
         ]);
         
-        // $cridentials = $request->only('email','password');
-        // if(Auth::attempt($cridentials)){
+        $cridentials = $request->only('email','password');
+        if(Auth::attempt($cridentials)){
+            $user = Auth::user();
+            if($user->isadmin == 1){
+                return redirect('/admin');
+            }
+            else return redirect('/');
+
+        }
+        // $user = $request->all();
+        // $email = $request->email;
+        // $password = $request->password;
+        // if (Auth::attempt(['email' => $email, 'password' => $password, 'isadmin' => 1])) {
+        //     return redirect('/admin');
+        // }
+        // else if(Auth::attempt(['email' => $email, 'password' => $password, 'isadmin' => 0])) {
         //     return redirect('/');
 
         // }
-        $email = $request->email;
-        $password = $request->password;
-        if (Auth::attempt(['email' => $email, 'password' => $password, 'isadmin' => 1])) {
-            return redirect('/admin');
-        }
-        else if(Auth::attempt(['email' => $email, 'password' => $password, 'isadmin' => 0])) {
-            return redirect('/');
-
-        }
         return redirect('/signup');
 
     }
@@ -96,5 +102,12 @@ class UserController extends Controller
 
         return redirect('/editprofile');
 
+    }
+
+    public function signout(Request $request)
+    {
+        // dd(Auth::user()->name);
+        Auth::logout();
+        return redirect('/signin');
     }
 }
