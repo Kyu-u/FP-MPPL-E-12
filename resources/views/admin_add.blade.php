@@ -51,7 +51,7 @@
             <div class="col-span-3 h-screen bg-black">
                 <ul class="pt-10 flex flex-col items-center">
                     <li>
-                        <img src="/public/images/senikersku.webp" alt="" class="w-40">
+                        <img src="/images/senikersku.webp" alt="" class="w-40">
                     </li>
                     <li class="mt-2">
                         <h2 class="text-white font-semibold text-lg">
@@ -62,9 +62,9 @@
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="/public/admin_home.html" class="flex items-center">
-                                <img src="/public/images/home-white.png" alt="" id="hoveritem1"
+                                <img src="/images/home-white.png" alt="" id="hoveritem1"
                                     class="relative w-8 pl-1">
-                                <img src="/public/images/home-black.png" alt="" id="hoveritem2"
+                                <img src="/images/home-black.png" alt="" id="hoveritem2"
                                     class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Home</span>
                             </a>
@@ -73,7 +73,7 @@
                     <li class="mt-6 px-10 w-full h-12">
                         <button class="bg-white rounded-md px-2 py-2 w-full h-12">
                             <a href="/public/admin_additem.html" class="flex items-center">
-                                <img src="/public/images/shoes-black.png" alt="" class="w-8 pl-1">
+                                <img src="/images/shoes-black.png" alt="" class="w-8 pl-1">
                                 <span class="pl-4">Add Item</span>
                             </a>
                         </button>
@@ -82,9 +82,9 @@
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="/public/admin_overview.html" class="flex items-center">
-                                <img src="/public/images/overview-white.png" alt="" id="hoveritem1"
+                                <img src="/images/overview-white.png" alt="" id="hoveritem1"
                                     class="relative w-8 pl-1">
-                                <img src="/public/images/overview-black.png" alt="" id="hoveritem2"
+                                <img src="/images/overview-black.png" alt="" id="hoveritem2"
                                     class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Overview</span>
                             </a>
@@ -94,9 +94,9 @@
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="/public/admin_orderStatus.html" class="flex items-center">
-                                <img src="/public/images/order-white.png" alt="" id="hoveritem1"
+                                <img src="/images/order-white.png" alt="" id="hoveritem1"
                                     class="relative w-8 pl-1">
-                                <img src="/public/images/order-black.png" alt="" id="hoveritem2"
+                                <img src="/images/order-black.png" alt="" id="hoveritem2"
                                     class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Change Order Status</span>
                             </a>
@@ -118,40 +118,18 @@
                 </h1>
                 <div class="flex flex-col pt-14 pl-10">
                     <label class="flex items-center mt-3 pb-2 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-xl font-bold">ID</span>
+                        <span class="ml-6 text-xl font-bold">ID</span>
                     </label>
+                    @foreach($products as $product)
+
                     <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35001</span>
+                        <span class="ml-6 text-lg font-semibold">{{$product->id}}</span>
                     </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35002</span>
-                    </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35003</span>
-                    </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35004</span>
-                    </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35005</span>
-                    </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35006</span>
-                    </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 text-gray-600"><span
-                            class="ml-6 text-lg font-semibold">35007</span>
-                    </label>
+                    @endforeach
+
                     <button class="modal-open bg-black rounded-md px-2 py-2 w-full h-10 text-white mt-5">
                         <a href="" class="flex items-center">
-                            <img src="/public/images/add.png" alt="" class="w-6 ml-4">
+                            <img src="/images/add.png" alt="" class="w-6 ml-4">
                             <span class="pl-4">Add New Item</span>
                         </a>
                     </button>
@@ -240,27 +218,13 @@
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
                         <span class="ml-6 text-xl font-bold">Item Name</span>
                     </label>
+                    @foreach($products as $product)
+
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Air Jordan 1</span>
+                        <span class="ml-6 text-lg font-semibold">{{$product->name}}</span>
                     </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Air Jordan 2</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Air Jordan 3</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Air Jordan 4</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Air Force 1</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Converse X CDG</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Airmax 97</span>
-                    </label>
+                    @endforeach
+
                 </div>
             </div>
             <div class="col-span-2 col-start-8 w-full">
@@ -271,27 +235,14 @@
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
                         <span class="ml-6 text-xl font-bold">Image File</span>
                     </label>
+                    @foreach($products as $product)
+
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35001.png</span>
+                        <span class="ml-6 text-lg font-semibold">{{$product->name}}</span>
                     </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35002.png</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35003.png</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35004.png</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35005.png</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35006.png</span>
-                    </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">35007.png</span>
-                    </label>
+                    @endforeach
+
+
                 </div>
             </div>
             <div class="col-span-3 col-start-10 w-full">
@@ -302,60 +253,18 @@
                     <label class="flex flex-col items-end mt-3 pb-2 border-b-2 border-black">
                         <span class="ml-6 text-xl font-bold pr-12">Cost</span>
                     </label>
+                    @foreach($products as $product)
                     <div class="flex flex-col items-end border-b-2 border-black">
                         <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 5.000.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
+                            <span class="ml-6 text-lg font-semibold pr-6">Rp. {{$product->price}}</span>
+                            <span> <a href="{{route('edititem', $product->id)}}"><button class="modal-open"><img src="/images/more.png" alt=""
+                                class="w-6 h-1.5"></button></a> </span>
                         </label>
                     </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
-                        <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 3.000.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
-                        </label>
-                    </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
-                        <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 2.000.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
-                        </label>
-                    </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
-                        <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 2.500.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
-                        </label>
-                    </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
-                        <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 1.500.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
-                        </label>
-                    </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
-                        <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 3.000.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
-                        </label>
-                    </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
-                        <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp 2.000.000</span>
-                            <span><button class="modal-open"><img src="/public/images/more.png" alt=""
-                                        class="w-6 h-1.5"></button></span>
-                        </label>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <span class="mt-5 text-2xl font-semibold">
-                            < 1 of 15>
-                        </span>
-                    </div>
+                    @endforeach
+
+                    {{ $products->links('landingpaginator') }}
+
                 </div>
             </div>
         </div>

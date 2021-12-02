@@ -15,7 +15,34 @@ class ProductController extends Controller
 
     public function addpage()
     {
-        return view('admin_add');
+        $products = \App\Models\Product::paginate(3);
+        return view('admin_add', compact('products'));
+    }
+    public function editpage($id)
+    {  
+        
+        $product = Product::where('id',$id)->first();
+        // dd($product);
+        return view('admin_edit', compact('product'));
+    }
+
+    public function edititem(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+        ]);
+        dd($request);
+        Product::where('id', $id)
+    }
+
+    public function landingpage()
+    {
+        $products = Product::all();
+        // dd($products);
+        return view('landing', compact('products'));
     }
 
     public function store(Request $request)
@@ -36,7 +63,7 @@ class ProductController extends Controller
             ]);
 
             // Save the file locally in the storage/public/ folder under a new folder named /product
-            $request->file->store('product', 'public');
+            $request->file->store('public/images/');
 
             // Store the record, using the new file hashname which will be it's new filename identity.
             $product = new Product([
