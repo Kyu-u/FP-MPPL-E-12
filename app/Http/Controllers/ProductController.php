@@ -8,6 +8,7 @@ use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
+use App\Models\Productdetail;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,23 @@ class ProductController extends Controller
         // dd($product);
         return view('admin_edit', compact('product'));
     }
+    public function caripage()
+    {
+        $products = Product::all();
+        return view('cari_barang', compact('products'));
+    }
+    public function detailpage($id)
+    {
+        // if(Auth::attempt()){
+            // $user = Auth::user();
+            $product = Product::where('id',$id)->first();
+            $details = Productdetail::where('product_id', $id)->get();
+            // $details = Productdetail::all();
+            // dd($user);
+            return view('detail_barang', compact('details', 'product'));
+        // }
 
+    }
     public function edititem(Request $request)
     {
         $request->validate([
