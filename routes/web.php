@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\CartController;
+
 
 
 
@@ -18,9 +20,9 @@ use App\Http\Controllers\FileController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('landing');
-// });
+Route::get('/', function () {
+    return view('admin_change');
+});
 
 Route::get('/landing',[ProductController::class,'landingpage'])->name('landing');
 
@@ -32,6 +34,11 @@ Route::get('/signin',[UserController::class,'signinpage'])->name('signin');
 Route::post('/signin/post',[UserController::class,'signin'])->name('signin.post');
 
 Route::post('/signout/post',[UserController::class,'signout'])->name('signout.post');
+
+Route::get('/caribarang',[ProductController::class,'caripage'])->name('caribarang');
+
+Route::get('/detailbarang/{id}',[ProductController::class,'detailpage'])->name('detailbarang');
+
 
 
 Route::get('/admin',[UserController::class,'adminpage'])->name('admin');
@@ -51,6 +58,7 @@ Route::resource('products', 'App\Http\Controllers\ProductController');
 
 Route::get('product/{filename}', [FileController::class,'publicImage'])->name('images.displayImage');
 
+Route::post('/addcart/post',[CartController::class,'addcart'])->name('addcart.post');
 
 
 
