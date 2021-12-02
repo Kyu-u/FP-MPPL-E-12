@@ -34,8 +34,36 @@ class ProductController extends Controller
             'price' => 'required',
             'category' => 'required',
         ]);
-        dd($request);
-        Product::where('id', $id)
+        // dd($request);
+        if ($request->hasFile('file')) {
+
+            $request->validate([
+                'image' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+            ]);
+
+            // Save the file locally in the storage/public/ folder under a new folder named /product
+            $request->file->store('public/images/');
+
+            // Store the record, using the new file hashname which will be it's new filename identity.
+            Product::where('id', $request->id)->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'category' => $request->category,
+                'file' => $request->file->hashName(),
+
+            ]);
+
+        }
+        else{
+            Product::where('id', $request->id)->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'category' => $request->category,
+            ]);
+        }
+
+        return redirect('additem');
+        
     }
 
     public function landingpage()
@@ -76,7 +104,7 @@ class ProductController extends Controller
             $product->save(); // Finally, save the record.
         }
 
-        return view('admin_add');
+        return redirect('additem');
 
     }
 }
