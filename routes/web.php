@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FileController;
+
 
 
 /*
@@ -16,10 +18,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+// Route::get('/', function () {
+//     return view('landing');
+// });
 
+Route::get('/landing',[ProductController::class,'landingpage'])->name('landing');
 
 
 Route::get('/signup',[UserController::class,'signuppage'])->name('signup');
@@ -39,8 +42,14 @@ Route::post('/editprofile/post',[UserController::class,'editprofile'])->name('ed
 Route::get('/additem',[ProductController::class,'addpage'])->name('additem');
 Route::post('/additem/post',[ProductController::class,'store'])->name('additem.post');
 
+Route::get('/edititem/{id}',[ProductController::class,'editpage'])->name('edititem');
+Route::post('/edititem/post',[ProductController::class,'edititem'])->name('edititem.post');
+
+
+
 Route::resource('products', 'App\Http\Controllers\ProductController'); 
 
+Route::get('product/{filename}', [FileController::class,'publicImage'])->name('images.displayImage');
 
 
 
