@@ -27,15 +27,36 @@
             <h2 class="text-md font-light text-xl">{{$product->price}}</h2>
             <h2 class="text-md font-light text-xl mt-10">Select Size</h2>
             {{-- <div class="flex mt-4">
-            <button class="bg-black rounded-md text-white text-xl px-8 py-2">38</button>
-            <button class="bg-white rounded-md border-2 border-black text-black text-xl px-6 py-2 ml-4 hover:bg-black hover:text-white">38.5</button>
-            <button class="bg-white rounded-md border-2 border-black text-black text-xl px-8 py-2 ml-4 hover:bg-black hover:text-white">39</button>
-            <button class="bg-white rounded-md border-2 border-black text-black text-xl px-8 py-2 ml-4 hover:bg-black hover:text-white">40</button>
+            <input class="hidden" id="radio_1" type="radio" name="radio" value="38">
+            <label class="flex flex-col border-2 border-black text-xl px-8 py-2 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_1">
+                38
+            </label>
+            <input class="hidden" id="radio_2" type="radio" name="radio" value="38.5">
+            <label class="flex flex-col border-2 border-black text-xl px-6 py-2 ml-4 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_2">
+                38.5
+            </label>
+            <input class="hidden" id="radio_3" type="radio" name="radio" value="39">
+            <label class="flex flex-col border-2 border-black text-xl px-8 py-2 ml-4 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_3">
+                39
+            </label>
+            <input class="hidden" id="radio_4" type="radio" name="radio" value="40">
+            <label class="flex flex-col border-2 border-black text-xl px-8 py-2 ml-4 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_4">
+                40
+            </label>
         </div>
         <div class="flex mt-4">
-            <button class="bg-white rounded-md border-2 border-black text-black text-xl px-8 py-2 hover:bg-black hover:text-white">42</button>
-            <button class="bg-white rounded-md border-2 border-black text-black text-xl px-6 py-2 ml-3 hover:bg-black hover:text-white">42.5</button>
-            <button class="bg-white rounded-md border-2 border-black text-black text-xl px-8 py-2 ml-4 hover:bg-black hover:text-white">44</button>
+            <input class="hidden" id="radio_5" type="radio" name="radio" value="42">
+            <label class="flex flex-col border-2 border-black text-xl px-8 py-2 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_5">
+                42
+            </label>
+            <input class="hidden" id="radio_6" type="radio" name="radio" value="42.5">
+            <label class="flex flex-col border-2 border-black text-xl px-6 py-2 ml-4 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_6">
+                42.5
+            </label>
+            <input class="hidden" id="radio_7" type="radio" name="radio" value="44">
+            <label class="flex flex-col border-2 border-black text-xl px-8 py-2 ml-4 shadow-md rounded-md cursor-pointer hover:bg-black hover:text-white" for="radio_7">
+                44
+            </label>
         </div> --}}
             <div class="flex mt-4 flex-wrap gap-10">
                 @foreach($details as $detail)
