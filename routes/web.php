@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderdetailController;
+
 
 
 
@@ -58,9 +60,17 @@ Route::resource('products', 'App\Http\Controllers\ProductController');
 
 Route::get('product/{filename}', [FileController::class,'publicImage'])->name('images.displayImage');
 
+Route::get('/cart',[CartController::class,'cartpage'])->name('cartpage');
 Route::post('/addcart/post',[CartController::class,'addcart'])->name('addcart.post');
+Route::post('/updateprice/post',[CartController::class,'updateprice'])->name('updateprice.post');
+Route::post('/addamount/post',[CartController::class,'addamount'])->name('addamount.post');
+Route::post('/minamount/post',[CartController::class,'minamount'])->name('minamount.post');
 
 
+Route::get('/checkout',[OrderdetailController::class,'formpage'])->name('checkout');
+Route::get('/payment',[OrderdetailController::class,'paymentpage'])->name('payment');
+
+Route::post('/fillform/post',[OrderdetailController::class,'fillform'])->name('fillform.post');
 
 
 

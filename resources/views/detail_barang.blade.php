@@ -17,7 +17,7 @@
         @else
         <input type="hidden" name="user_id" value="-1">
         @endif
-        <input type="hidden" name="amount" value="2" id="">
+        <input type="hidden" name="amount" value="1" id="">
         <input type="hidden" name="product_id" value="{{$product->id}}">
         <div class="col-span-1 col-start-2">
             <div class="flex">
@@ -59,19 +59,19 @@
             </label>
         </div> --}}
             <div class="flex mt-4 flex-wrap gap-10">
-                @foreach($details as $detail)
-                <input class="hidden" id="radio_1" type="radio" name="size" value="{{$detail->size}}">
-                <label class="flex flex-col p-4 shadow-md rounded-md md:rounded-xl cursor-pointer" for="radio_1">
+                @foreach($details as $key=>$detail)
+                <input class="hidden" id="radio_{{$key}}" type="radio" name="size" value="{{$detail->size}}">
+                <label class="flex flex-col p-4 shadow-md rounded-md md:rounded-xl cursor-pointer" for="radio_{{$key}}">
                     {{$detail->size}}
                 </label>
                 {{-- <button class="bg-black rounded-md text-white text-xl px-8 py-2">{{$detail->size}}</button> --}}
                 @endforeach
 
             </div>
-
             <button type="submit" class="rounded-full bg-black text-white mt-10 px-28 py-2">
                 Add to Shopping Cart
             </button>
+            
             <div class="pl-4 pr-96">
                 <div class="container flex border-t-2 border-b-2 border-black mt-10 pl-2 py-2">
                     <span class="pr-64">Review(0)</span>

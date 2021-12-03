@@ -13,22 +13,73 @@
 
     <!-- Styles -->
 
+    <style>
+        input:checked~.dot {
+            transform: translateX(100%);
+            background-color: #48bb78;
+        }
 
+    </style>
     <style>
         body {
             font-family: 'Nunito', sans-serif;
         }
-        
-        input:checked + label {
+
+        input:checked+label {
             border-color: black;
             background-color: black;
             color: white;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+
     </style>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script>
+        function changecheckbox() {
+            document.getElementById("toogle").value = '1';
+            // x = document.getElementById("toogle");
+            // if(x.value == 0){
+            //     x.value = "1";
+            // }
+            // else(x.value == 1){
+            //     x.value = "0";
+            // }
+        }
         var cont = 0;
+
+        function multiply(key) {
+            // Get the input values
+            x = parseInt(document.getElementById('amount' + key).innerHTML);
+            y = parseInt(document.getElementById('price' + key).innerHTML);
+            a = Number(document.getElementById('amount' + key).value);
+            b = Number(document.getElementById('price' + key).value);
+
+            // Do the multiplication
+            c = x * y;
+
+            // Set the value of the total
+            // console.log(x);
+            // console.log('total' + key);
+            document.getElementById('total' + key).innerHTML = c;
+        }
+
+        function total(key) {
+            // console.log(key);
+            totalprice = 0;
+            for (let i = 0; i < key; i++) {
+                x = parseInt(document.getElementById('total' + i).innerHTML);
+                totalprice += x;
+                console.log('total = ' + totalprice);
+
+
+
+
+            }
+            tax = totalprice / 10;
+            document.getElementById('productstotal').innerHTML = totalprice;
+            document.getElementById('tax').innerHTML = totalprice / 10;
+            document.getElementById('total').innerHTML = totalprice + tax + 10000;
+        }
 
         function loopSlider() {
             var xx = setInterval(function () {

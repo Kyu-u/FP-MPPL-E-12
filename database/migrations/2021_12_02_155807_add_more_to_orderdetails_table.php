@@ -16,6 +16,7 @@ class AddMoreToOrderdetailsTable extends Migration
         Schema::table('orderdetails', function (Blueprint $table) {
             $table->string('file')->nullable();
             $table->string('payment')->nullable();
+            $table->bigInteger('price')->nullable();
         });
     }
 
