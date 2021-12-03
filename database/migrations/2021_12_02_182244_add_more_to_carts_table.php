@@ -15,6 +15,7 @@ class AddMoreToCartsTable extends Migration
     {
         Schema::table('carts', function (Blueprint $table) {
             $table->integer('size')->nullable();
+            $table->bigInteger('price')->nullable();
         });
     }
 

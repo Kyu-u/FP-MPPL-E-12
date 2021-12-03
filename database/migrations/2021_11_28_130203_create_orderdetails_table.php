@@ -16,14 +16,14 @@ class CreateOrderdetailsTable extends Migration
         Schema::create('orderdetails', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('user_id');
-            $table->integer('cart_id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('postalcode');
-            $table->string('orderstatus');
+            $table->integer('user_id')->nullable();
+            $table->integer('cart_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('postalcode')->nullable();
+            $table->string('orderstatus')->nullable();
         });
     }
 

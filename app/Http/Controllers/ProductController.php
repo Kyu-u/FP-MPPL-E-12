@@ -38,7 +38,7 @@ class ProductController extends Controller
             $product = Product::where('id',$id)->first();
             $details = Productdetail::where('product_id', $id)->get();
             // $details = Productdetail::all();
-            // dd($user);
+            // dd($details);
             return view('detail_barang', compact('details', 'product'));
         // }
 

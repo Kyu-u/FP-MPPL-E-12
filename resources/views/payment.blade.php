@@ -11,21 +11,26 @@
         <div class="pt-5 pl-28 pr-10">
             <div class="container w-full h-56">
                 <h1 class="font-bold text-4xl">YOUR ORDER</h1>
+                @foreach($products as $product)
                 <div class="flex flex-col items-center">
-                    <img src="/images/travis-scott.png" alt="" class="w-4/5">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-4/5">
                 </div>
                 <div class="flex flex-col items-center">
-                    <h1 class="text-2xl font-bold">Jordan 1 Low Travis Scott</h1>
+                    <h1 class="text-2xl font-bold">{{$product->name}}</h1>
                 </div>
+
+                @endforeach
+                @foreach($data as $cart)
                 <div class="pt-10 pb-4 flex border-b-2 mr-10 border-black">
-                    <span class="font-semibold text-gray-500">Size : 42.5(EU)</span>
-                    <span class="font-semibold text-gray-500  pl-4 ml-32">Quantity : 1</span>
-                    <span class="font-bold ml-32">Rp 19.500.000</span>
+                    <span class="font-semibold text-gray-500">Size : {{$cart->size}}</span>
+                    <span class="font-semibold text-gray-500  pl-4 ml-32">Quantity : {{$cart->amount}}</span>
+                    <span class="font-bold ml-32">Rp {{$cart->price*$cart->amount}}</span>
                 </div>
+                @endforeach
                 <ul>
                     <li class="font-bold pt-2">
                         <span>Subtotal</span>
-                        <span class="pl-96 ml-1">Rp 19.500.000</span>
+                        <span class="pl-96 ml-1">Rp {{$order->price-10000}}</span>
                     </li>
                     <li class="font-bold pt-2">
                         <span>Shipping</span>
@@ -33,7 +38,7 @@
                     </li>
                     <li class="font-bold pt-2">
                         <span>Total</span>
-                        <span class="ml-8 pl-96">Rp 19.510.000</span>
+                        <span class="ml-8 pl-96">Rp {{$order->price}}</span>
                     </li>
                 </ul>
             </div>
