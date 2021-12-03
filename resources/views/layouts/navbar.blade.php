@@ -18,7 +18,13 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
-
+        
+        input:checked + label {
+            border-color: black;
+            background-color: black;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
     </style>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script>
