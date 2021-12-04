@@ -52,12 +52,9 @@
                     <h1 class="text-4xl font-bold">PAYMENT METHOD</h1>
                 </div>
                 <div class="flex pt-5">
-                    <button class="bg-black text-white text-xl font-semibold rounded-md px-8 py-3">Transfer
+                    <button type="button" class="bg-black text-white text-xl font-semibold rounded-md px-8 py-3">Transfer
                         Bank</button>
-                    <button
-                        class="bg-white text-2xl font-semibold rounded-md ml-2 px-14 py-3 hover:bg-black hover:text-white">OVO</button>
-                    <button
-                        class="bg-white text-2xl font-semibold rounded-md ml-2 px-12 py-3 hover:bg-black hover:text-white">GOPAY</button>
+
                 </div>
                 <ul class="pt-10">
                     <li class="flex items-center pb-4">
