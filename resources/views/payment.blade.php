@@ -46,28 +46,32 @@
     </div>
     <div class="col-span-1 col-start-2">
         <div class="pt-5 px-14">
-            <div class="">
+            <form action="{{route('updatepayment.post')}}" method="POST">
+                @csrf
                 <div class="py-3">
                     <h1 class="text-4xl font-bold">PAYMENT METHOD</h1>
                 </div>
                 <div class="flex pt-5">
-                    <button class="bg-black text-white text-xl font-semibold rounded-md px-8 py-3">Transfer Bank</button>
-                    <button class="bg-white text-2xl font-semibold rounded-md ml-2 px-14 py-3 hover:bg-black hover:text-white">OVO</button>
-                    <button class="bg-white text-2xl font-semibold rounded-md ml-2 px-12 py-3 hover:bg-black hover:text-white">GOPAY</button>
+                    <button class="bg-black text-white text-xl font-semibold rounded-md px-8 py-3">Transfer
+                        Bank</button>
+                    <button
+                        class="bg-white text-2xl font-semibold rounded-md ml-2 px-14 py-3 hover:bg-black hover:text-white">OVO</button>
+                    <button
+                        class="bg-white text-2xl font-semibold rounded-md ml-2 px-12 py-3 hover:bg-black hover:text-white">GOPAY</button>
                 </div>
                 <ul class="pt-10">
                     <li class="flex items-center pb-4">
-                        <input type="radio" class="form-radio" name="accountType" value="personal">
+                        <input type="radio" class="form-radio" name="payment" value="BCA">
                         <img src="/images/bca.jpg" alt="" class="w-28 ml-5">
                         <span class="ml-5 text-2xl font-semibold">Bank BCA (Manual Verification)</span>
                     </li>
                     <li class="flex items-center">
-                        <input type="radio" class="form-radio" name="accountType" value="personal">
+                        <input type="radio" class="form-radio" name="payment" value="BRI">  
                         <img src="/images/bri.jpg" alt="" class="w-28 ml-5">
                         <span class="ml-5 text-2xl font-semibold">Bank BRI (Manual Verification)</span>
                     </li>
                     <li class="flex items-center">
-                        <input type="radio" class="form-radio" name="accountType" value="personal">
+                        <input type="radio" class="form-radio" name="payment" value="Mandiri">
                         <img src="/images/mandiri.jpg" alt="" class="w-28 ml-5">
                         <span class="ml-5 text-2xl font-semibold">Bank Mandiri (Manual Verification)</span>
                     </li>
@@ -77,11 +81,11 @@
                     </li>
                 </ul>
                 <div class="container pr-28 pt-4">
-                    <button class="w-full bg-black text-white rounded-md py-2">
-                        <a href="" class="text-xl font-semibold">Make Payment</a>
+                    <button type="submit" class="w-full bg-black text-xl font-semibold text-white rounded-md py-2">
+                        Make Payment
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

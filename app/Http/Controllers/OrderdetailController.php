@@ -74,4 +74,20 @@ class OrderdetailController extends Controller
         // dd($data);
         return view('payment', compact('data','products','order'));
     }
+
+    public function updatepayment(Request $request)
+    {
+        dd($request);
+
+        $request->validate([
+            'payment' => 'required',
+        ]);
+
+
+        Orderdetail::where('user_id', Auth::user()->id)->update([
+            'payment' => $request->payment,
+        ]);
+
+
+    }
 }
