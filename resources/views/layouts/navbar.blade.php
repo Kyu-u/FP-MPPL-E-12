@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
     <title>Senikersku</title>
 
     <!-- Fonts -->
@@ -243,6 +244,70 @@
         </div>
     </nav>
     @yield('content')
+    <script>
+        const targetDiv = document.getElementById("bankdisplay");
+        const btn1 = document.getElementById("bankbutt");
+        const targetDiv2 = document.getElementById("emoneydisplay");
+        const btn2 = document.getElementById("emoneybutt");
+        const btn3 = document.getElementById("emoneybutt2");    
+        btn1.onclick = function() {  
+            console.log("d", targetDiv.style.display)
+            if(targetDiv.style.display !== "none")
+            {
+                targetDiv.style.display = "none";
+            }
+            if(targetDiv.style.display === "block")
+            {
+                targetDiv.style.display = "block";
+            }
+            else
+            {
+                targetDiv.style.display = "block";
+            }
+            if(targetDiv2.style.display === "block")
+            {
+                targetDiv2.style.display = "none";
+            }
+        }
+        btn2.onclick = function()
+        {
+            if(targetDiv2.style.display === "none")
+            {
+                targetDiv2.style.display = "none";
+            }
+            if(targetDiv2.style.display === "block")
+            {
+                targetDiv2.style.display = "block";
+            }
+            else
+            {
+                targetDiv2.style.display = "block";
+            }
+            if(targetDiv.style.display === "block")
+            {
+                targetDiv.style.display = "none";
+            }
+        }
+        btn3.onclick = function()
+        {
+            if(targetDiv2.style.display === "none")
+            {
+                targetDiv2.style.display = "none";
+            }
+            if(targetDiv2.style.display === "block")
+            {
+                targetDiv2.style.display = "block";
+            }
+            else
+            {
+                targetDiv2.style.display = "block";
+            }
+            if(targetDiv.style.display === "block")
+            {
+                targetDiv.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
