@@ -21,23 +21,33 @@
                 Payment Method
             </div>
             <div class="text-xl font-semibold">
-                OVO
+                {{$order->payment}}
             </div>
         </div>
+        @php
+        $subtot = 0;
+        @endphp
+        @foreach($data as $product)
         <div class="py-3 flex justify-between w-98">
+            @php
+            $subtot+=$product->price*$product->amount;
+            @endphp
             <div class="text-xl font-semibold">
-                Jordan 1
+                {{$product->p_name}} x {{$product->amount}}
             </div>
             <div class="text-xl font-semibold">
-                Rp 19.500.000
+                {{$product->price*$product->amount}}
             </div>
         </div>
+        @endforeach
+
+
         <div class="py-3 flex justify-between w-98">
             <div class="text-xl font-semibold">
                 Subtotal
             </div>
             <div class="text-xl font-semibold">
-                Rp 19.500.000
+                Rp {{$subtot}}
             </div>
         </div>
         <div class="py-3 flex justify-between w-98">
@@ -53,14 +63,16 @@
                 Total
             </div>
             <div class="text-xl font-semibold">
-                Rp 19.510.000
+                Rp {{$order->price}}
             </div>
         </div>
     </div>
     <div class="pt-40 flex flex-col items-center">
-        <button class="px-16 py-1 bg-gray-900 text-gray-200 font-semibold text-xl rounded-md">
-            Home
-        </button>
+        <a href="{{route('landing')}}">
+            <button class="px-16 py-1 bg-gray-900 text-gray-200 font-semibold text-xl rounded-md">
+                Home
+            </button>
+        </a>
     </div>
 </div>
 @endsection

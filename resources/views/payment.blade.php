@@ -12,7 +12,7 @@
             <div class="container w-full h-56">
                 <h1 class="font-bold text-4xl">YOUR ORDER</h1>
                 @foreach($products as $product)
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center overflow-hidden h-72 pt-10">
                     <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-4/5">
                 </div>
                 <div class="flex flex-col items-center">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="flex pt-5">
                     <input class="hidden" id="radio_bank" type="radio" name="radio" value="Bank">
-                    <label  class="bg-white text-xl font-semibold rounded-md ml-2 px-8 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_bank">
+                    <label id="bankbutt" class="bg-white text-xl font-semibold rounded-md ml-2 px-8 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_bank">
                         <div id="bankbutt" class="">
                             Bank Transfer
                         </div>

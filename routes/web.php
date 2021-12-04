@@ -47,6 +47,7 @@ Route::get('/history',[OrderdetailController::class,'historypage'])->name('histo
 
 
 Route::get('/admin',[OrderdetailController::class,'adminpage'])->name('admin');
+Route::get('/profile',[UserController::class,'profilepage'])->name('profile');
 
 Route::get('/editprofile',[UserController::class,'editprofilepage'])->name('editprofile');
 Route::post('/editprofile/post',[UserController::class,'editprofile'])->name('editprofile.post');
@@ -68,6 +69,7 @@ Route::get('product/{filename}', [FileController::class,'publicImage'])->name('i
 Route::get('/cart',[CartController::class,'cartpage'])->name('cartpage');
 
 Route::post('/addcart/post',[CartController::class,'addcart'])->name('addcart.post');
+Route::post('/deletecart/post',[CartController::class,'deletecart'])->name('deletecart.post');
 Route::post('/updateprice/post',[CartController::class,'updateprice'])->name('updateprice.post');
 Route::post('/addamount/post',[CartController::class,'addamount'])->name('addamount.post');
 Route::post('/minamount/post',[CartController::class,'minamount'])->name('minamount.post');
@@ -78,6 +80,8 @@ Route::get('/payment',[OrderdetailController::class,'paymentpage'])->name('payme
 
 Route::post('/fillform/post',[OrderdetailController::class,'fillform'])->name('fillform.post');
 Route::post('/updatepayment/post',[OrderdetailController::class,'updatepayment'])->name('updatepayment.post');
+Route::get('/ordercomplete', [OrderdetailController::class,'ordercomplete'])->name('ordercomplete');
+
 
 
 

@@ -18,7 +18,7 @@
                     <button
                         class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
                         type="button">
-                        <a href="{{route('')}}">Track Shipping</a>
+                        <a href="{{route('track')}}">Track Shipping</a>
                     </button>
                 </li>
                 <li class="pt-8">
@@ -32,7 +32,7 @@
                     <button
                         class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
                         type="button">
-                        <a href="/public/riwayat_pembelian.html">History</a>
+                        <a href="{{route('history')}}">History</a>
                     </button>
                 </li>
                 <li class="pt-8">
@@ -93,7 +93,7 @@
                         <div class="flex flex-col items-end pt-14 px-48 mr-20">
                             <button class="bg-black rounded-md px-6 py-2 text-sm text-white font-semibold"
                                 type="submit">
-                                <a href="/public/akun.html">Save</a>
+                                Save
                             </button>
                         </div>
                     </ul>
