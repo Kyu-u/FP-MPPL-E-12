@@ -52,35 +52,69 @@
                     <h1 class="text-4xl font-bold">PAYMENT METHOD</h1>
                 </div>
                 <div class="flex pt-5">
-                    <button type="button" class="bg-black text-white text-xl font-semibold rounded-md px-8 py-3">Transfer
-                        Bank</button>
-
+                    <input class="hidden" id="radio_bank" type="radio" name="radio" value="Bank">
+                    <label  class="bg-white text-xl font-semibold rounded-md ml-2 px-8 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_bank">
+                        <div id="bankbutt" class="">
+                            Bank Transfer
+                        </div>
+                    </label>
+                    <input class="hidden" id="radio_OVO" type="radio" name="radio" value="OVO">
+                    <label id="emoneybutt" class="bg-white text-2xl font-semibold rounded-md ml-2 px-14 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_OVO">
+                        <div id="emoneybutt" class="">
+                            OVO
+                        </div>
+                    </label>
+                    <input class="hidden" id="radio_GOPAY" type="radio" name="radio" value="GOPAY">
+                    <label id="emoneybutt" class="bg-white text-2xl font-semibold rounded-md ml-2 px-12 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_GOPAY">
+                        <div id="emoneybutt2" class="">
+                            GOPAY
+                        </div>
+                    </label>
+                    <!-- <button class="bg-black text-white text-xl font-semibold rounded-md px-8 py-3">Transfer Bank</button> -->
+                    <!-- <button class="bg-white text-2xl font-semibold rounded-md ml-2 px-14 py-3 hover:bg-black hover:text-white">OVO</button>
+                    <button class="bg-white text-2xl font-semibold rounded-md ml-2 px-12 py-3 hover:bg-black hover:text-white">GOPAY</button> -->
                 </div>
-                <ul class="pt-10">
-                    <li class="flex items-center pb-4">
-                        <input type="radio" class="form-radio" name="payment" value="BCA">
-                        <img src="/images/bca.jpg" alt="" class="w-28 ml-5">
-                        <span class="ml-5 text-2xl font-semibold">Bank BCA (Manual Verification)</span>
-                    </li>
-                    <li class="flex items-center">
-                        <input type="radio" class="form-radio" name="payment" value="BRI">  
-                        <img src="/images/bri.jpg" alt="" class="w-28 ml-5">
-                        <span class="ml-5 text-2xl font-semibold">Bank BRI (Manual Verification)</span>
-                    </li>
-                    <li class="flex items-center">
-                        <input type="radio" class="form-radio" name="payment" value="Mandiri">
-                        <img src="/images/mandiri.jpg" alt="" class="w-28 ml-5">
-                        <span class="ml-5 text-2xl font-semibold">Bank Mandiri (Manual Verification)</span>
-                    </li>
-                    <li class="flex font-medium ml-5 text-lg">
-                        <span>Upon Transfer, Please Confirm Payment via</span>
-                        <span class="ml-2 underline cursor-pointer">Whatsapp</span>
-                    </li>
-                </ul>
-                <div class="container pr-28 pt-4">
-                    <button type="submit" class="w-full bg-black text-xl font-semibold text-white rounded-md py-2">
-                        Make Payment
-                    </button>
+                <div id="bankdisplay" class="hidden">
+                    <ul class="pt-10">
+                        <li class="flex items-center pb-4">
+                            <input type="radio" class="form-radio" name="accountType" value="personal">
+                            <img src="/public/images/bca.jpg" alt="" class="h-10 ml-5">
+                            <span class="ml-5 text-xl font-semibold">Bank BCA (Manual Verification)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="radio" class="form-radio" name="accountType" value="personal">
+                            <img src="/public/images/bri.jpg" alt="" class="h-20 ml-5">
+                            <span class="ml-5 text-xl font-semibold">Bank BRI (Manual Verification)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="radio" class="form-radio" name="accountType" value="personal">
+                            <img src="/public/images/mandiri.jpg" alt="" class="h-20 ml-5">
+                            <span class="ml-5 text-xl font-semibold">Bank Mandiri (Manual Verification)</span>
+                        </li>
+                        <li class="flex font-medium ml-5 text-lg pt-5">
+                            <span>Upon Transfer, Please Confirm Payment via</span>
+                            <span class="ml-2 underline cursor-pointer">Whatsapp</span>
+                        </li>
+                    </ul>
+                    <div class="container pr-28 pt-10">
+                        <button class="w-full bg-black text-white rounded-md py-2">
+                            <a href="" class="text-xl font-semibold">Make Payment</a>
+                        </button>
+                    </div>
+                </div>
+                <div id="emoneydisplay" class="hidden">
+                    <div class="py-20 ">
+                        <h1 class="ml-5 text-xl font-semibold">0000000 an Christoffer Ivano</h1>
+                        <div class="flex font-medium ml-5 text-lg pt-5">
+                            <span>Upon Transfer, Please Confirm Payment via</span>
+                            <span class="ml-2 underline cursor-pointer">Whatsapp</span>
+                        </div>
+                    </div>
+                    <div class="container pr-28 pt-10">
+                        <button class="w-full bg-black text-white rounded-md py-2">
+                            <a href="" class="text-xl font-semibold">Make Payment</a>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
