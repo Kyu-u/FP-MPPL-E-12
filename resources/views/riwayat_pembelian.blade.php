@@ -9,12 +9,12 @@
         <ul class="pt-16 pl-28">
             <li>
                 <button class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white" type="button">
-                    <a href="/public/akun.html">My Account</a>
+                    <a href="{{route('profile')}}">My Account</a>
                 </button>
             </li>
             <li class="pt-8">
                 <button class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white" type="button">
-                    <a href="/public/lacak_pemesanan.html">Track Shipping</a>
+                    <a href="{{route('track')}}">Track Shipping</a>
                 </button>
             </li>
             <li class="pt-8">
@@ -24,13 +24,18 @@
             </li>
             <li class="pt-8">
                 <button class="bg-black rounded-md px-6 py-2 text-lg text-white font-semibold" type="button">
-                    <a href="/public/riwayat_pembelian.html">History</a>
+                    <a href="{{route('history')}}">History</a>
                 </button>
             </li>
             <li class="pt-8">
-                <button class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white" type="button">
-                    <a href="/public/signin.html">Sign Out</a>
-                </button>
+                <form method="POST" action="{{route('signout.post')}}">
+                    @csrf
+                    <button
+                        class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
+                        type="submit">
+                        Sign Out
+                    </button>
+                </form>
             </li>
         </ul>
     </div>

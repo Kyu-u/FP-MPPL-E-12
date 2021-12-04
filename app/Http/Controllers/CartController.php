@@ -126,4 +126,17 @@ class CartController extends Controller
 
         return redirect()->route('cartpage');
     }
+
+    public function deletecart(Request $request)
+    {
+        $request->validate([
+            'cart_id' => 'required',
+        ]);
+
+        $flight = Cart::find($request->get('cart_id'));
+
+        $flight->delete();
+
+        return redirect()->route('cartpage');
+    }
 }

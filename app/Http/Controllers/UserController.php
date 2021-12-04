@@ -32,6 +32,13 @@ class UserController extends Controller
     public function editprofilepage(){
         return view('editprofile');
     }
+
+    public function profilepage()
+    {   
+        $user = User::where('id', Auth::user()->id)->get()->first();
+        // dd($user);
+        return view('profile', compact('user'));
+    }
     public function signup(Request $request)
     {
         $request->validate([
@@ -83,10 +90,13 @@ class UserController extends Controller
 
     public function editprofile(Request $request)
     {
+
         $userid = Auth::id();
+        // dd($userid);
+
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email',
+            'email' => 'required',
             'phone' => 'required',
             'address' => 'required',
             'postalcode' => 'required',
@@ -99,8 +109,7 @@ class UserController extends Controller
             'address' => $request->address,
             'postalcode' => $request->postalcode,
 		]);
-
-        return redirect('/editprofile');
+        return redirect()->route('profile');
 
     }
 

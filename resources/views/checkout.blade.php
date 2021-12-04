@@ -12,7 +12,7 @@
             <div class="container w-full h-56">
                 <h1 class="font-bold text-4xl">YOUR ORDER</h1>
                 @foreach($products as $product)
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center overflow-hidden h-72 pt-10">
                     <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-4/5">
                 </div>
                 <div class="flex flex-col items-center">

@@ -117,7 +117,7 @@ class OrderdetailController extends Controller
         $productids = Cart::where('user_id', Auth::user()->id)->get('product_id');
         $products = Product::whereIn('id', $productids)->get();
         $orders = Orderdetail::where('user_id', Auth::user()->id)->where('orderstatus', '')->get();
-        // dd($data);
+        // dd($completeds);
         return view('riwayat_pembelian', compact('ongoings','completeds','cancelleds'));
 
     }
@@ -134,6 +134,8 @@ class OrderdetailController extends Controller
         Orderdetail::where('user_id', Auth::user()->id)->update([
             'payment' => $request->payment,
         ]);
+
+        return redirect()->route('ordercomplete');
 
     }
 
@@ -182,5 +184,19 @@ class OrderdetailController extends Controller
         // dd($orders);
 
         return view('admin_landing', compact('orders'));
+    }
+
+    public function ordercomplete(){
+        $carts = Cart::where('user_id', Auth::user()->id)->get();
+        $data = DB::table('products')
+            ->join('carts', 'products.id', '=', 'carts.product_id')
+            ->select('carts.*', 'products.price','products.name as p_name')
+            ->where('carts.user_id', '=', Auth::user()->id)
+            ->get();
+        $productids = Cart::where('user_id', Auth::user()->id)->get('product_id');
+        $products = Product::whereIn('id', $productids)->get();
+        $order = Orderdetail::where('user_id', Auth::user()->id)->get()->first();
+        // dd($data);
+        return view('order_complete', compact('data','products','order'));
     }
 }

@@ -85,9 +85,53 @@ class ProductController extends Controller
 
     public function landingpage()
     {
-        $products = Product::all();
-        // dd($products);
-        return view('landing', compact('products'));
+        $products = Product::all()->toArray();
+        $jordans = Product::where('category', 'Jordan')->get();
+        $jordancount  = count($jordans);
+        if($jordancount >0){
+            $jordans2 = Product::where('category', 'Jordan')->get();
+
+            while($jordancount<10){
+                    foreach($jordans as $product){
+                        $jordans2->add($product);
+                    }
+                $jordancount  = count($jordans2);
+    
+                }
+        }
+        $yeezys = Product::where('category', 'Yeezy')->get();
+        
+        $yeezycount  = count($yeezys);
+        // dd($yeezycount);
+        if($yeezycount >0){
+            $yeezys2 = Product::where('category', 'Yeezy')->get();
+            while($yeezycount<10){
+                    foreach($yeezys as $product){
+                        $yeezys2->add($product);
+                    }
+                $yeezycount  = count($yeezys2);
+    
+                }
+        }
+        $nikes = Product::where('category', 'Nike')->get();
+        
+        $nikecount  = count($nikes);
+        // dd($yeezycount);
+        if($nikecount >0){
+            $nikes2 = Product::where('category', 'Nike')->get();
+            while($nikecount<10){
+                    foreach($nikes as $product){
+                        $nikes2->add($product);
+                    }
+                $nikecount  = count($nikes2);
+    
+                }
+        }
+
+
+            // dd($jordans2);
+        // dd($nikes2, $yeezys2);
+        return view('landing', compact('jordans2', 'nikes2', 'yeezys2'));
     }
 
     public function store(Request $request)

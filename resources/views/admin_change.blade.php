@@ -101,73 +101,72 @@
         }
         })" class="relative">
     <div class="wrapper">
-        <form action="{{route('updatestatus.post')}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="grid grid-cols-12">
-                <div class="col-span-3 h-screen bg-black">
-                    <ul class="pt-10 flex flex-col items-center">
-                        <li>
-                            <img src="/images/senikersku.webp" alt="" class="w-40">
-                        </li>
-                        <li class="mt-2">
-                            <h2 class="text-white font-semibold text-lg">
-                                Welcome, Admin001
-                            </h2>
-                        </li>
-                        <li class="mt-20 px-10 w-full h-12">
+
+        <div class="grid grid-cols-12">
+            <div class="col-span-3 h-screen bg-black">
+                <ul class="pt-10 flex flex-col items-center">
+                    <li>
+                        <img src="/images/senikersku.webp" alt="" class="w-40">
+                    </li>
+                    <li class="mt-2">
+                        <h2 class="text-white font-semibold text-lg">
+                            Welcome, Admin001
+                        </h2>
+                    </li>
+                    <li class="mt-20 px-10 w-full h-12">
+                        <button
+                            class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
+                            <a href="{{route('admin')}}" class="flex items-center">
+                                <img src="/images/home-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
+                                <img src="/images/home-black.png" alt="" id="hoveritem2"
+                                    class="absolute w-8 pl-1 hidden">
+                                <span class="pl-4" id="hovertext">Home</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mt-6 px-10 w-full h-12">
+                        <button class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
+                            <a href="{{route('additem')}}" class="flex items-center">
+                                <img src="/images/shoes-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
+                                <img src="/images/shoes-black.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
+                                <span class="pl-4" id="hovertext">Add Item</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mt-6 px-10 w-full h-12">
+                        <button
+                            class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
+                            <a href="/public/admin_overview.html" class="flex items-center">
+                                <img src="/images/overview-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
+                                <img src="/images/overview-black.png" alt="" id="hoveritem2"
+                                    class="absolute w-8 pl-1 hidden">
+                                <span class="pl-4" id="hovertext">Overview</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mt-6 px-10 w-full h-12">
+                        <button class="bg-white rounded-md px-2 py-2 w-full h-12">
+                            <a href="{{route('updatestatus')}}" class="flex items-center">
+                                <img src="/images/order-black.png" alt="" class="w-8 pl-1">
+                                <span class="pl-4">Change Order Status</span>
+                            </a>
+                        </button>
+                    </li>
+                    <li class="mt-44 px-10 w-full h-10">
+                        <form method="POST" action="{{route('signout.post')}}">
+                            @csrf
                             <button
-                                class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
-                                <a href="{{route('admin')}}" class="flex items-center">
-                                    <img src="/images/home-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
-                                    <img src="/images/home-black.png" alt="" id="hoveritem2"
-                                        class="absolute w-8 pl-1 hidden">
-                                    <span class="pl-4" id="hovertext">Home</span>
-                                </a>
+                                class="bg-red-700 rounded-md px-2 py-2 w-full h-10 text-white hover:bg-red-800 hover:text-gray-200"
+                                type="submit">
+                                <span class="font-bold text-md">Sign Out</span>
                             </button>
-                        </li>
-                        <li class="mt-6 px-10 w-full h-12">
-                            <button class="bg-white rounded-md px-2 py-2 w-full h-12">
-                                <a href="{{route('additem')}}" class="flex items-center">
-                                    <img src="/images/shoes-black.png" alt="" class="w-8 pl-1">
-                                    <span class="pl-4">Add Item</span>
-                                </a>
-                            </button>
-                        </li>
-                        <li class="mt-6 px-10 w-full h-12">
-                            <button
-                                class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
-                                <a href="/public/admin_overview.html" class="flex items-center">
-                                    <img src="/images/overview-white.png" alt="" id="hoveritem1"
-                                        class="relative w-8 pl-1">
-                                    <img src="/images/overview-black.png" alt="" id="hoveritem2"
-                                        class="absolute w-8 pl-1 hidden">
-                                    <span class="pl-4" id="hovertext">Overview</span>
-                                </a>
-                            </button>
-                        </li>
-                        <li class="mt-6 px-10 w-full h-12">
-                            <button
-                                class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
-                                <a href="{{route('updatestatus')}}" class="flex items-center">
-                                    <img src="/images/order-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
-                                    <img src="/images/order-black.png" alt="" id="hoveritem2"
-                                        class="absolute w-8 pl-1 hidden">
-                                    <span class="pl-4" id="hovertext">Change Order Status</span>
-                                </a>
-                            </button>
-                        </li>
-                        <li class="mt-44 px-10 w-full h-10">
-                            <form method="POST" action="{{route('signout.post')}}" >
-                                @csrf
-                                <button
-                                    class="bg-red-700 rounded-md px-2 py-2 w-full h-10 text-white hover:bg-red-800 hover:text-gray-200" type="submit">
-                                    <span class="font-bold text-md">Sign Out</span>
-                                </button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-span-4 col-start-4 px-10 pt-6">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <form class="col-span-9 col-start-4 grid grid-cols-9" action="{{route('updatestatus.post')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="col-span-4 px-10 pt-6">
                     <h1 class="text-4xl font-bold">
                         Order Status
                     </h1>
@@ -199,7 +198,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="col-span-5 col-start-8 px-10 pt-6">
+                <div class="col-span-5 col-start-5 px-10 pt-6">
                     <h1 class="text-4xl font-bold text-white">
                         Order Status
                     </h1>
@@ -264,8 +263,9 @@
                         {{ $orders->links('landingpaginator') }}
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+
     </div>
     <template x-if="openAlertBox">
         <div class="fixed top-0 right-0" x-transition:enter="transition ease-out duration-300"

@@ -216,16 +216,25 @@
                     </a>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="{{route('landing')}}" class="drowdown">AIR JORDAN</a>
+                    <form action="{{route('caribarang')}}" method="GET" role="search">
+                        @csrf
+                        <button value="Jordan" name="term" type="submit" >AIR JORDAN</button>
+                    </form>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="{{route('landing')}}">ADIDAS YEEZY</a>
+                    <form action="{{route('caribarang')}}" method="GET" role="search">
+                        @csrf
+                        <button value="Yeezy" name="term" type="submit" >ADIDAS YEEZY</button>
+                    </form>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="{{route('landing')}}">NIKE</a>
+                    <form action="{{route('caribarang')}}" method="GET" role="search">
+                        @csrf
+                        <button value="Nike" name="term" type="submit" >NIKE</button>
+                    </form>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="{{route('landing')}}">BROWSE ALL</a>
+                    <a href="{{route('caribarang')}}">BROWSE ALL</a>
                 </li>
             </ul>
         </div>
@@ -235,10 +244,10 @@
                     <a href="/public/wishlist.html"><img src="/images/wishlist.png" alt="" class="w-8 h-8"></a>
                 </li>
                 <li class="px-2 text-white font-semibold hover:text-gray-300">
-                    <a href="/public/shopping_cart.html"><img src="/images/cart.png" alt="" class="w-8 h-8"></a>
+                    <a href="{{route('cartpage')}}"><img src="/images/cart.png" alt="" class="w-8 h-8"></a>
                 </li>
                 <li class="px-2 text-white font-semibold hover:text-gray-300">
-                    <a href="{{route('editprofile')}}"><img src="/images/account.png" alt="" class="w-8 h-8"></a>
+                    <a href="{{route('profile')}}"><img src="/images/account.png" alt="" class="w-8 h-8"></a>
                 </li>
             </ul>
         </div>
