@@ -63,7 +63,7 @@ class CartController extends Controller
             $add = $request->get('amount');
             $newamount = $add + $currentamount;
             // Cart::where('size', $request->get('size'))->update('amount' => $newamount);
-            Cart::where('size',$request->get('size'))->update([
+            Cart::where('size',$request->get('size'))->where('product_id', $request->get('product_id'))->update([
                 'amount' => $add + $currentamount,
 
             ]);

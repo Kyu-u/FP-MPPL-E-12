@@ -3,13 +3,13 @@
        <div class="flex mt-4 justify-center">
             @if ($paginator->onFirstPage())
             <li class="disabled">
-                <button class="w-10 flex item-center">
+                <button class="flex item-center">
                     <
                 </button>
             </li>
             @else
             <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev">
-                <button class="w-10 flex item-center">
+                <button class="flex item-center">
                     <
                 </button>
             </a></li>
