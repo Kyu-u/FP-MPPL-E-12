@@ -207,6 +207,6 @@ class ProductController extends Controller
 
         ]);
         $productdetail->save(); // Finally, save the record.
-        return redirect()->route('editdetail'); 
+        return redirect()->route('additem'); 
     }
 }
