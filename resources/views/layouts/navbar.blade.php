@@ -211,21 +211,21 @@
         <div class="w-3/5">
             <ul class="flex justify-center">
                 <li class="px-8 py-4 text-white font-semibold hover:text-gray-300 text-xl">
-                    <a href="">
+                    <a href="{{route('landing')}}">
                         <img src="/images/senikersku.webp" alt="" class="h-10">
                     </a>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="/public/cari_barang.html" class="drowdown">AIR JORDAN</a>
+                    <a href="{{route('landing')}}" class="drowdown">AIR JORDAN</a>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="/public/cari_barang.html">ADIDAS YEEZY</a>
+                    <a href="{{route('landing')}}">ADIDAS YEEZY</a>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="/public/cari_barang.html">NIKE</a>
+                    <a href="{{route('landing')}}">NIKE</a>
                 </li>
                 <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
-                    <a href="/public/cari_barang.html">BROWSE ALL</a>
+                    <a href="{{route('landing')}}">BROWSE ALL</a>
                 </li>
             </ul>
         </div>

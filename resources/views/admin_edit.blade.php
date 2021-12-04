@@ -50,7 +50,7 @@
         <div class="grid grid-cols-12">
             <div class="col-span-3 h-screen bg-black">
                 <ul class="pt-10 flex flex-col items-center">
-                    <li>
+                <li>
                         <img src="/images/senikersku.webp" alt="" class="w-40">
                     </li>
                     <li class="mt-2">
@@ -61,7 +61,7 @@
                     <li class="mt-20 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
-                            <a href="/public/admin_home.html" class="flex items-center">
+                            <a href="{{route('admin')}}" class="flex items-center">
                                 <img src="/images/home-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/home-black.png" alt="" id="hoveritem2"
                                     class="absolute w-8 pl-1 hidden">
@@ -71,7 +71,7 @@
                     </li>
                     <li class="mt-6 px-10 w-full h-12">
                         <button class="bg-white rounded-md px-2 py-2 w-full h-12">
-                            <a href="/public/admin_additem.html" class="flex items-center">
+                            <a href="{{route('additem')}}" class="flex items-center">
                                 <img src="/images/shoes-black.png" alt="" class="w-8 pl-1">
                                 <span class="pl-4">Add Item</span>
                             </a>
@@ -91,7 +91,7 @@
                     <li class="mt-6 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
-                            <a href="/public/admin_orderStatus.html" class="flex items-center">
+                            <a href="{{route('updatestatus')}}" class="flex items-center">
                                 <img src="/images/order-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
                                 <img src="/images/order-black.png" alt="" id="hoveritem2"
                                     class="absolute w-8 pl-1 hidden">
@@ -107,7 +107,6 @@
                             </a>
                         </button>
                     </li>
-                </ul>
             </div>
             <div class="col-span-9 col-start-4 p-20">
                 <form method="POST" action="{{route('edititem.post')}}" enctype="multipart/form-data">
@@ -137,7 +136,8 @@
                             <span class="font-bold">Item Category :</span><br>
                             <span class=""><input
                                     class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
-                                    id="category" value="{{$product->category}}" name="category" type="text" placeholder=""></span>
+                                    id="category" value="{{$product->category}}" name="category" type="text"
+                                    placeholder=""></span>
                         </li>
                         <li class="flex flex-col pt-6">
                             <span class="font-bold pb-2">Item Image :</span>

@@ -61,9 +61,9 @@
                         </button>
                     </div>
                     <div class="flex flex-col items-end ml-72">
-                        <button class="bg-black rounded-xl px-6 py-2 text-sm border-4 text-white text-xl font-semibold"
+                        <button class="bg-black rounded-xl px-6 py-2 border-4 text-white text-xl font-semibold"
                             type="submit">
-                            <a href="landing_page.html">Sign In</a>
+                            Sign In
                         </button>
                     </div>
                     <div class="pt-14">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="px-48 pt-24">
                     <span class="font-semibold">Don't have an account?</h2>
-                        <a href="/public/signup.html"><span class="font-semibold text-blue-700 underline">Sign
+                        <a href="{{route('signup')}}"><span class="font-semibold text-blue-700 underline">Sign
                                 up</span></a>
                 </div>
             </div>
