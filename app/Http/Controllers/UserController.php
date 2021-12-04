@@ -46,7 +46,7 @@ class UserController extends Controller
             'password' => Hash::make($request['password'])
         ]);
         Auth::loginUsingId($user);
-        return redirect('/');
+        return redirect()->route('signin');
 
     }
 
@@ -64,7 +64,7 @@ class UserController extends Controller
             if($user->isadmin == 1){
                 return redirect('/admin');
             }
-            else return redirect('/');
+            else return redirect()->route('editprofile');
 
         }
         // $user = $request->all();
@@ -106,7 +106,7 @@ class UserController extends Controller
 
     public function signout(Request $request)
     {
-        // dd(Auth::user()->name);
+        //dd(Auth::user()->name);
         Auth::logout();
         return redirect('/signin');
     }
