@@ -22,9 +22,9 @@ use App\Http\Controllers\OrderdetailController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin_change');
-});
+// Route::get('/', function () {
+//     return view('admin_change');
+// });
 
 Route::get('/landing',[ProductController::class,'landingpage'])->name('landing');
 
@@ -54,6 +54,8 @@ Route::post('/additem/post',[ProductController::class,'store'])->name('additem.p
 Route::get('/edititem/{id}',[ProductController::class,'editpage'])->name('edititem');
 Route::post('/edititem/post',[ProductController::class,'edititem'])->name('edititem.post');
 
+Route::get('/updatestatus',[OrderdetailController::class,'updatestatuspage'])->name('updatestatus');
+Route::post('/updatestatus/post',[OrderdetailController::class,'updatestatus'])->name('updatestatus.post');
 
 
 Route::resource('products', 'App\Http\Controllers\ProductController'); 

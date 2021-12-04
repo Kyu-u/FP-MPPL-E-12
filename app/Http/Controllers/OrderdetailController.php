@@ -77,7 +77,7 @@ class OrderdetailController extends Controller
 
     public function updatepayment(Request $request)
     {
-        dd($request);
+        // dd($request);
 
         $request->validate([
             'payment' => 'required',
@@ -88,6 +88,45 @@ class OrderdetailController extends Controller
             'payment' => $request->payment,
         ]);
 
+    }
 
+    public function updatestatuspage()
+    {   
+        $orders = \App\Models\Orderdetail::paginate(1);
+        // dd($orders);
+        // $orders = Orderdetail::all()->paginate(1);
+        return view('admin_change', compact('orders'));
+    }
+
+    public function updatestatus(Request $request){
+        $request->validate([
+            'orderstatus' => 'required',
+            'id' => 'required',
+        ]);
+        // dd($request->file);
+        if ($request->hasFile('file')) {
+            // dd($request->file);
+
+            $request->validate([
+                'image' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+            ]);
+
+            // Save the file locally in the storage/public/ folder under a new folder named /product
+            $request->file->store('public/images/');
+            // dd( $request->file->hashName());
+            // Store the record, using the new file hashname which will be it's new filename identity.
+            Orderdetail::where('id', $request->id)->update([
+                'orderstatus' => $request->orderstatus,
+                'file' => $request->file->hashName(),
+
+            ]);
+
+        }
+        else{
+            Orderdetail::where('id', $request->id)->update([
+                'orderstatus' => $request->orderstatus,
+            ]);
+        }
+        return redirect()->route('updatestatus');
     }
 }
