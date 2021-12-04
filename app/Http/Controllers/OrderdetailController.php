@@ -178,7 +178,7 @@ class OrderdetailController extends Controller
     }
 
     public function adminpage(){
-        $orders = Orderdetail::where('orderstatus', null)->paginate(10);
+        $orders = Orderdetail::where('orderstatus', 'ONGOING')->paginate(10);
         // dd($orders);
 
         return view('admin_landing', compact('orders'));

@@ -58,13 +58,13 @@
                             Bank Transfer
                         </div>
                     </label>
-                    <input class="hidden" id="radio_OVO" type="radio" name="radio" value="OVO">
+                    <input class="hidden" id="radio_OVO" type="radio" name="payment" value="OVO">
                     <label id="emoneybutt" class="bg-white text-2xl font-semibold rounded-md ml-2 px-14 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_OVO">
                         <div id="emoneybutt" class="">
                             OVO
                         </div>
                     </label>
-                    <input class="hidden" id="radio_GOPAY" type="radio" name="radio" value="GOPAY">
+                    <input class="hidden" id="radio_GOPAY" type="radio" name="payment" value="GOPAY">
                     <label id="emoneybutt" class="bg-white text-2xl font-semibold rounded-md ml-2 px-12 py-3 hover:bg-black hover:text-white cursor-pointer" for="radio_GOPAY">
                         <div id="emoneybutt2" class="">
                             GOPAY
@@ -77,17 +77,17 @@
                 <div id="bankdisplay" class="hidden">
                     <ul class="pt-10">
                         <li class="flex items-center pb-4">
-                            <input type="radio" class="form-radio" name="accountType" value="personal">
+                            <input type="radio" class="form-radio" name="payment" value="BCA">
                             <img src="/public/images/bca.jpg" alt="" class="h-10 ml-5">
                             <span class="ml-5 text-xl font-semibold">Bank BCA (Manual Verification)</span>
                         </li>
                         <li class="flex items-center">
-                            <input type="radio" class="form-radio" name="accountType" value="personal">
+                            <input type="radio" class="form-radio" name="payment" value="BRI">
                             <img src="/public/images/bri.jpg" alt="" class="h-20 ml-5">
                             <span class="ml-5 text-xl font-semibold">Bank BRI (Manual Verification)</span>
                         </li>
                         <li class="flex items-center">
-                            <input type="radio" class="form-radio" name="accountType" value="personal">
+                            <input type="radio" class="form-radio" name="payment" value="Mandiri">
                             <img src="/public/images/mandiri.jpg" alt="" class="h-20 ml-5">
                             <span class="ml-5 text-xl font-semibold">Bank Mandiri (Manual Verification)</span>
                         </li>
@@ -97,8 +97,8 @@
                         </li>
                     </ul>
                     <div class="container pr-28 pt-10">
-                        <button class="w-full bg-black text-white rounded-md py-2">
-                            <a href="" class="text-xl font-semibold">Make Payment</a>
+                        <button type="submit" class="w-full bg-black text-white text-xl font-semibold rounded-md py-2">
+                            Make Payment
                         </button>
                     </div>
                 </div>
@@ -111,8 +111,8 @@
                         </div>
                     </div>
                     <div class="container pr-28 pt-10">
-                        <button class="w-full bg-black text-white rounded-md py-2">
-                            <a href="" class="text-xl font-semibold">Make Payment</a>
+                        <button type="submit" class="w-full bg-black text-white text-xl font-semibold rounded-md py-2">
+                            Make Payment
                         </button>
                     </div>
                 </div>
