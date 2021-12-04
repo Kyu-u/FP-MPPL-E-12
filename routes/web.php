@@ -71,6 +71,8 @@ Route::get('/checkout',[OrderdetailController::class,'formpage'])->name('checkou
 Route::get('/payment',[OrderdetailController::class,'paymentpage'])->name('payment');
 
 Route::post('/fillform/post',[OrderdetailController::class,'fillform'])->name('fillform.post');
+Route::post('/updatepayment/post',[OrderdetailController::class,'updatepayment'])->name('updatepayment.post');
+
 
 
 
