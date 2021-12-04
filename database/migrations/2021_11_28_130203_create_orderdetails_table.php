@@ -23,7 +23,7 @@ class CreateOrderdetailsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('postalcode')->nullable();
-            $table->string('orderstatus')->nullable();
+            $table->string('orderstatus')->default('ONGOING');
         });
     }
 

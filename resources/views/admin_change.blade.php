@@ -223,7 +223,7 @@
                         <h1 class="text-2xl font-semibold">Status</h1>
                         <select class="border-2 rounded-md border-gray-700 px-2 py-1 mt-2" name="orderstatus">
                             <option value="Cancelled">Cancelled</option>
-                            <option value="Accepted">Accepted</option>  
+                            <option value="Completed">Completed</option>  
                           </select>
                         {{-- <div @click.away="open = false" class="relative font-semibold pt-2" x-data="{ open: false }">
                             <button @click="open = !open" class="rounded-md border-2 border-gray-700 px-2 py-1">
