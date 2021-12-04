@@ -218,7 +218,7 @@
                     @foreach($products as $product)
 
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">{{$product->name}}</span>
+                        <a href="{{route('editdetail' , $product->id)}}"><span class="ml-6 text-lg font-semibold">{{$product->name}}</span></a>
                     </label>
                     @endforeach
 

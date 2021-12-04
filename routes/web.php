@@ -56,7 +56,9 @@ Route::get('/additem',[ProductController::class,'addpage'])->name('additem');
 Route::post('/additem/post',[ProductController::class,'store'])->name('additem.post');
 
 Route::get('/edititem/{id}',[ProductController::class,'editpage'])->name('edititem');
+Route::get('/editdetail/{id}',[ProductController::class,'editdetail'])->name('editdetail');
 Route::post('/edititem/post',[ProductController::class,'edititem'])->name('edititem.post');
+Route::post('/formdetail/post',[ProductController::class,'formdetail'])->name('formdetail.post');
 
 Route::get('/updatestatus',[OrderdetailController::class,'updatestatuspage'])->name('updatestatus');
 Route::post('/updatestatus/post',[OrderdetailController::class,'updatestatus'])->name('updatestatus.post');
