@@ -129,4 +129,11 @@ class OrderdetailController extends Controller
         }
         return redirect()->route('updatestatus');
     }
+
+    public function adminpage(){
+        $orders = Orderdetail::where('orderstatus', null)->paginate(10);
+        // dd($orders);
+
+        return view('admin_landing', compact('orders'));
+    }
 }
