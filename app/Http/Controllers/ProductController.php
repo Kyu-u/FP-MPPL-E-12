@@ -184,4 +184,29 @@ class ProductController extends Controller
         }
         return view('cari_barang',compact('products'));
     }
+
+    public function editdetail($id)
+    {  
+        
+        $product = Product::where('id',$id)->first();
+        // dd($product);
+        return view('admin_detail', compact('product'));
+    }
+    public function formdetail(Request $request){
+        $request->validate([
+            'id' => 'required',
+            'size' => 'required',
+            'stock' => 'required',
+
+        ]);
+
+        $productdetail = new Productdetail([
+            "product_id" => $request->get('id'),
+            "size" => $request->get('size'),
+            "stock" => $request->get('stock'),
+
+        ]);
+        $productdetail->save(); // Finally, save the record.
+        return redirect()->route('editdetail'); 
+    }
 }
