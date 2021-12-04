@@ -90,6 +90,37 @@ class OrderdetailController extends Controller
         // dd($data);
         return view('lacak', compact('data'));
     }
+
+    public function historypage(){
+        $carts = Cart::where('user_id', Auth::user()->id)->get();
+        $ongoings = DB::table('products')
+            ->join('carts', 'products.id', '=', 'carts.product_id')
+            ->join('orderdetails', 'carts.id', '=', 'orderdetails.cart_id')
+            ->select('orderdetails.*', 'products.name', 'products.file')
+            ->where('carts.user_id', '=', Auth::user()->id)
+            ->where('orderstatus', 'ONGOING')
+            ->get();
+        $completeds = DB::table('products')
+        ->join('carts', 'products.id', '=', 'carts.product_id')
+        ->join('orderdetails', 'carts.id', '=', 'orderdetails.cart_id')
+        ->select('orderdetails.*', 'products.name', 'products.file')
+        ->where('carts.user_id', '=', Auth::user()->id)
+        ->where('orderstatus', 'Completed')
+        ->get();
+        $cancelleds = DB::table('products')
+        ->join('carts', 'products.id', '=', 'carts.product_id')
+        ->join('orderdetails', 'carts.id', '=', 'orderdetails.cart_id')
+        ->select('orderdetails.*', 'products.name', 'products.file')
+        ->where('carts.user_id', '=', Auth::user()->id)
+        ->where('orderstatus', 'Cancelled')
+        ->get();
+        $productids = Cart::where('user_id', Auth::user()->id)->get('product_id');
+        $products = Product::whereIn('id', $productids)->get();
+        $orders = Orderdetail::where('user_id', Auth::user()->id)->where('orderstatus', '')->get();
+        // dd($data);
+        return view('riwayat_pembelian', compact('ongoings','completeds','cancelleds'));
+
+    }
     
     public function updatepayment(Request $request)
     {

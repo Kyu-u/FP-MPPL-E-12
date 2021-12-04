@@ -41,6 +41,8 @@ Route::get('/caribarang',[ProductController::class,'listproducts'])->name('carib
 
 Route::get('/detailbarang/{id}',[ProductController::class,'detailpage'])->name('detailbarang');
 Route::get('/track',[OrderdetailController::class,'trackingpage'])->name('track');
+Route::get('/history',[OrderdetailController::class,'historypage'])->name('history');
+
 
 
 
