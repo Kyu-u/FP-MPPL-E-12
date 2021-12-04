@@ -124,4 +124,20 @@ class ProductController extends Controller
         return redirect('additem');
 
     }
+
+    public function listproducts(Request $request)
+    {
+        // dd($request->term);
+        if($request->term){
+            $products = Product::where(function ($query) use ($request) {
+                $query->where('category', 'LIKE', '%' . $request->term . '%' )->orWhere('name', 'LIKE', '%' . $request->term . '%' );
+                })->paginate(4);
+        }
+        else{
+            $products = Product::where(function ($query) use ($request) {
+                $query->where('category', 'LIKE', '%' . $request->term . '%' )->orWhere('name', 'LIKE', '%' . $request->term . '%' );
+                })->paginate(4);
+        }
+        return view('cari_barang',compact('products'));
+    }
 }

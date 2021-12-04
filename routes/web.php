@@ -37,9 +37,10 @@ Route::post('/signin/post',[UserController::class,'signin'])->name('signin.post'
 
 Route::post('/signout/post',[UserController::class,'signout'])->name('signout.post');
 
-Route::get('/caribarang',[ProductController::class,'caripage'])->name('caribarang');
+Route::get('/caribarang',[ProductController::class,'listproducts'])->name('caribarang');
 
 Route::get('/detailbarang/{id}',[ProductController::class,'detailpage'])->name('detailbarang');
+Route::get('/track',[OrderdetailController::class,'trackingpage'])->name('track');
 
 
 
@@ -63,6 +64,7 @@ Route::resource('products', 'App\Http\Controllers\ProductController');
 Route::get('product/{filename}', [FileController::class,'publicImage'])->name('images.displayImage');
 
 Route::get('/cart',[CartController::class,'cartpage'])->name('cartpage');
+
 Route::post('/addcart/post',[CartController::class,'addcart'])->name('addcart.post');
 Route::post('/updateprice/post',[CartController::class,'updateprice'])->name('updateprice.post');
 Route::post('/addamount/post',[CartController::class,'addamount'])->name('addamount.post');

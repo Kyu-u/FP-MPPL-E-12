@@ -75,6 +75,22 @@ class OrderdetailController extends Controller
         return view('payment', compact('data','products','order'));
     }
 
+    public function trackingpage(){
+        $carts = Cart::where('user_id', Auth::user()->id)->get();
+        $data = DB::table('products')
+            ->join('carts', 'products.id', '=', 'carts.product_id')
+            ->join('orderdetails', 'carts.id', '=', 'orderdetails.cart_id')
+            ->select('orderdetails.*', 'products.name', 'products.file')
+            ->where('carts.user_id', '=', Auth::user()->id)
+            ->where('orderstatus', 'ONGOING')
+            ->get();
+        $productids = Cart::where('user_id', Auth::user()->id)->get('product_id');
+        $products = Product::whereIn('id', $productids)->get();
+        $orders = Orderdetail::where('user_id', Auth::user()->id)->where('orderstatus', '')->get();
+        // dd($data);
+        return view('lacak', compact('data'));
+    }
+    
     public function updatepayment(Request $request)
     {
         // dd($request);
