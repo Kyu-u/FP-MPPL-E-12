@@ -43,7 +43,7 @@ Route::get('/detailbarang/{id}',[ProductController::class,'detailpage'])->name('
 
 
 
-Route::get('/admin',[UserController::class,'adminpage'])->name('admin');
+Route::get('/admin',[OrderdetailController::class,'adminpage'])->name('admin');
 
 Route::get('/editprofile',[UserController::class,'editprofilepage'])->name('editprofile');
 Route::post('/editprofile/post',[UserController::class,'editprofile'])->name('editprofile.post');

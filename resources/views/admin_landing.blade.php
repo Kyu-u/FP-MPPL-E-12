@@ -80,17 +80,19 @@
                 </ul>
             </div>
             <div class="col-span-2 col-start-4">
-                <h1 class="pl-10 mt-10 text-3xl font-bold">
+                <h1 class="pl-7 mt-10 text-3xl font-bold">
                     Pending Order
                 </h1>
                 <div class="flex flex-col pt-14 pl-10">
                     <label class="flex items-center mt-3 pb-2 border-b-2 border-black">
                         <span class="ml-6 text-xl font-bold">ID</span>
                     </label>
+                    @foreach($orders as $order)
                     <label class="flex items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">45001</span>
+                        <span class="ml-6 text-lg font-semibold">{{$order->id}}</span>
                     </label>
-                    <label class="flex items-center py-4 border-b-2 border-black">
+                    @endforeach
+                    {{-- <label class="flex items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">45002</span>
                     </label>
                     <label class="flex items-center py-4 border-b-2 border-black">
@@ -107,7 +109,7 @@
                     </label>
                     <label class="flex items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">45007</span>
-                    </label>
+                    </label> --}}
                 </div>
             </div>
             <div class="col-span-2 col-start-6 w-full">
@@ -118,10 +120,12 @@
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
                         <span class="ml-6 text-xl font-bold">Order Date</span>
                     </label>
+                    @foreach($orders as $order)
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">30/06/2021</span>
+                        <span class="ml-6 text-lg font-semibold">{{$order->updated_at}}</span>
                     </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
+                    @endforeach
+                    {{-- <label class="flex flex-col items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">27/06/2021</span>
                     </label>
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
@@ -138,7 +142,7 @@
                     </label>
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">19/06/2021</span>
-                    </label>
+                    </label> --}}
                 </div>
             </div>
             <div class="col-span-2 col-start-8 w-full">
@@ -149,10 +153,12 @@
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
                         <span class="ml-6 text-xl font-bold">Customer</span>
                     </label>
+                    @foreach($orders as $order)
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
-                        <span class="ml-6 text-lg font-semibold">Vincent</span>
+                        <span class="ml-6 text-lg font-semibold">{{$order->name}}</span>
                     </label>
-                    <label class="flex flex-col items-center py-4 border-b-2 border-black">
+                    @endforeach
+                    {{-- <label class="flex flex-col items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">Eji</span>
                     </label>
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
@@ -169,7 +175,7 @@
                     </label>
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">Ivan</span>
-                    </label>
+                    </label> --}}
                 </div>
             </div>
             <div class="col-span-3 col-start-10 w-full">
@@ -183,12 +189,14 @@
                             <span><img src="/public/images/more.png" alt="" class="w-6 h-1.5"></span>
                         </label>
                     </div>
+                    @foreach($orders as $order)
                     <div class="flex flex-col items-end border-b-2 border-black">
                         <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-16">Rp 20.000.000</span>
+                            <span class="ml-6 text-lg font-semibold pr-16">Rp {{$order->price}}</span>
                         </label>
                     </div>
-                    <div class="flex flex-col items-end border-b-2 border-black">
+                    @endforeach
+                    {{-- <div class="flex flex-col items-end border-b-2 border-black">
                         <label class="flex items-center py-4">
                             <span class="ml-6 text-lg font-semibold pr-16">Rp 100.000.000</span>
                         </label>
@@ -217,11 +225,12 @@
                         <label class="flex items-center py-4">
                             <span class="ml-6 text-lg font-semibold pr-16">Rp 10.000.000</span>
                         </label>
-                    </div>
+                    </div> --}}
                     <div class="flex flex-col items-end">
-                        <span class="mt-5 text-2xl font-semibold">
+                        {{-- <span class="mt-5 text-2xl font-semibold">
                             < 1 of 50 >
-                        </span>
+                        </span> --}}
+                        {{ $orders->links('landingpaginator') }}
                     </div>   
                 </div>
             </div>
