@@ -40,10 +40,11 @@
                 History
             </h1>
             <ul class="pt-6 text-lg divide-y">
+                @foreach($completeds as $item)
                 <li class="flex pt-6">
-                    <span class="mr-20 font-bold"><img src="/images/gd.png" alt="" class="w-48"></span>
+                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-48"></span>
                     <ul class="">
-                        <li class="text-md font-bold">Air Force 1 X GD Low</li>
+                        <li class="text-md font-bold">{{$item->name}}</li>
                         <li class="pt-1 text-sm">Order has arrived</li>
                         <li class="pt-1 text-gray-400 underline text-sm">Track Shipping</li>
                     </ul>
@@ -53,21 +54,41 @@
                         </button>
                     </div>
                 </li>
+                @endforeach
+                @foreach($ongoings as $item)
                 <li class="flex pt-6">
-                    <span class="mr-20 font-bold"><img src="/images/aj1PSG.png" alt="" class="w-48"></span>
+                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-48"></span>
                     <ul class="">
-                        <li class="text-md font-bold">Air Jordan 1 PSG</li>
+                        <li class="text-md font-bold">{{$item->name}}</li>
                         <li class="pt-1 text-sm">Order has been shipped</li>
                         <li class="pt-1 underline text-sm">
                             <a href="/public/lacak_pemesanan.html">Track Shipping</a>
                         </li>
                     </ul>
                     <div class="flex flex-col items-center pt-14 pl-36">
-                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold" type="button">
+                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold" type="button" disabled>
                             Give Review
                         </button>
                     </div>
                 </li>
+                @endforeach
+                @foreach($cancelleds as $item)
+                <li class="flex pt-6">
+                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-48"></span>
+                    <ul class="">
+                        <li class="text-md font-bold">{{$item->name}}</li>
+                        <li class="pt-1 text-sm">Order has been cancelled</li>
+                        <li class="pt-1 underline text-sm">
+                            <a href="/public/lacak_pemesanan.html">Track Shipping</a>
+                        </li>
+                    </ul>
+                    <div class="flex flex-col items-center pt-14 pl-36">
+                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold" type="button" disabled>
+                            Give Review
+                        </button>
+                    </div>
+                </li>
+                @endforeach
             </ul>
         </div>
     </div>
