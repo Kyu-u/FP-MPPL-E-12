@@ -18,7 +18,7 @@
                     <button
                         class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
                         type="button">
-                        <a href="/public/lacak_pemesanan.html">Track Shipping</a>
+                        <a href="{{route('')}}">Track Shipping</a>
                     </button>
                 </li>
                 <li class="pt-8">
