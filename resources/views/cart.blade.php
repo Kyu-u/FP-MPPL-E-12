@@ -11,8 +11,8 @@
         @foreach($data as $key=>$product)
 
         <div class="pt-5 pl-28 pr-10">
-            <div class="flex container w-full h-56 border-2 border-black rounded-md">
-                <span><img src="/images/gd.png" alt="" class="h-28 mt-12"></span>
+            <div class="flex justify-between px-10 container w-full h-56 border-2 border-black rounded-md">
+                <span><img src="{{route('images.displayImage',$product->file)}}" class="h-28 mt-12"></span>
                 <ul class="pt-5 ml-5">
                     <li class="grid justify-end pl-56">
                         <form action="{{route('deletecart.post')}}" method="POST"> @csrf <input type="hidden"

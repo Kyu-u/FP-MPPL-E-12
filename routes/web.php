@@ -22,9 +22,11 @@ use App\Http\Controllers\OrderdetailController;
 |
 */
 
-Route::get('/', function () {
-    return view('order_complete');
-});
+// Route::get('/', function () {
+//     return view('order_complete');
+// });
+
+Route::get('/',[ProductController::class,'landingpage'])->name('landing');
 
 Route::get('/landing',[ProductController::class,'landingpage'])->name('landing');
 
