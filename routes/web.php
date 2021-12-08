@@ -22,9 +22,9 @@ use App\Http\Controllers\OrderdetailController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('order_complete');
-// });
+Route::get('/wishlist', function () {
+    return view('wishlist');
+})->name('wishlist');
 
 Route::get('/',[ProductController::class,'landingpage'])->name('landing');
 
