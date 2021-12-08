@@ -11,7 +11,7 @@
             <ul class="pt-16 pl-28">
                 <li>
                     <button class="bg-black rounded-md px-6 py-2 text-lg text-white font-semibold" type="button">
-                        <a href="/public/akun.html">My Account</a>
+                        <a href="{{route('profile')}}">My Account</a>
                     </button>
                 </li>
                 <li class="pt-8">
@@ -25,7 +25,7 @@
                     <button
                         class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
                         type="button">
-                        <a href="/public/wishlist.html">Wishlist</a>
+                        <a href="{{route('wishlist')}}">Wishlist</a>
                     </button>
                 </li>
                 <li class="pt-8">
@@ -65,7 +65,7 @@
                     </li>
                     <li class="pt-6">
                         <span class="mr-10 font-bold">Phone Number</span>
-                        <span class="">:</span>
+                        <span class=""> :</span>
                         <span class="ml-5">{{$user->phone}}</span>
                     </li>
                     <li class="pt-6">
