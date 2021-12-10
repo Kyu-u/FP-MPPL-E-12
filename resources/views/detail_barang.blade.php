@@ -3,13 +3,23 @@
 @section('content')
 <div class="grid grid-cols-2 pt-16">
     <div class="col-span-1 flex flex-col items-center">
-        <div class="container border-2 border-gray-500 h-96 w-96 rounded-md">
-            <a href="{{route('detailbarang', $product->id)}}"><img src="{{route('images.displayImage',$product->file)}}"
-                    alt="" class=""></a>
-
-
+        <div class="container relative border-2 border-gray-500 h-96 w-96 rounded-md">
+            <img src="{{route('images.displayImage',$product->file)}}"alt="" class="">
+            <form class="absolute top-4 right-4" method="POST" action="{{route('addwishlist.post')}}">
+            @csrf
+            @if(Auth::user())
+            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+            @else
+            <input type="hidden" name="user_id" value="-1">
+            @endif
+            <input type="hidden" value="{{$product->id}}" name="product_id">
+                <button type="submit">
+                    <img src="/images/like.png" alt="" class="w-8 h-8 ml-10 mt-1">
+                </button>
+        </form>
         </div>
     </div>
+
     <form method="POST" action="{{route('addcart.post')}}">
         @csrf
         @if(Auth::user())
@@ -22,7 +32,6 @@
         <div class="col-span-1 col-start-2">
             <div class="flex">
                 <h1 class="text-2xl font-bold">{{$product->name}}</h1>
-                <img src="/images/like.png" alt="" class="w-8 h-8 ml-10 mt-1">
             </div>
             <h2 class="text-md font-light text-xl">{{$product->price}}</h2>
             <h2 class="text-md font-light text-xl mt-10">Select Size</h2>

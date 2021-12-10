@@ -9,11 +9,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Productdetail;
+use App\Models\Wishlist;
 
 class ProductController extends Controller
 {
-
-
     public function addpage()
     {
         $products = \App\Models\Product::paginate(3);
@@ -208,5 +207,45 @@ class ProductController extends Controller
         ]);
         $productdetail->save(); // Finally, save the record.
         return redirect()->route('additem'); 
+    }
+
+    public function addwishlist(Request $request){
+        $request->validate([
+            'product_id' => 'required',
+            'user_id' => 'required',
+        ]);
+
+        if(!Wishlist::where('product_id',$request->get('product_id'))->first()){
+            $wishlist = new Wishlist([
+                "product_id" => $request->get('product_id'),
+                "user_id" => $request->get('user_id'),
+            ]);
+            $wishlist->save();
+        }
+
+        return redirect()->route('wishlist'); 
+    }
+
+    public function wishlistpage(){
+        $wishlistitems=Wishlist::where('user_id',Auth::user()->id)->get();
+        // dd($wishlistitems);
+        $countwishlist = count($wishlistitems);
+        $productids = Wishlist::where('user_id', Auth::user()->id)->get('product_id');
+        $products = Product::whereIn('id', $productids)->get();
+
+        return view('wishlist', compact('wishlistitems','countwishlist','products'));
+    }
+
+    public function destroywishlist(Request $request){
+        $request->validate([
+            'product_id' => 'required',
+            'user_id' => 'required',
+        ]);
+        DB::table('wishlists')->where('user_id', $request->get('user_id'))->where('product_id', $request->get('product_id'))->delete();
+        return redirect()->route('wishlist');
+    }
+
+    public function destroyproduct(Request $request){
+        DB::table('wishlist')->where('id_siswa', $id)->delete();
     }
 }

@@ -22,9 +22,9 @@ use App\Http\Controllers\OrderdetailController;
 |
 */
 
-Route::get('/wishlist', function () {
-    return view('wishlist');
-})->name('wishlist');
+// Route::get('/wishlist', function () {
+//     return view('wishlist');
+// })->name('wishlist');
 
 Route::get('/',[ProductController::class,'landingpage'])->name('landing');
 
@@ -44,8 +44,6 @@ Route::get('/caribarang',[ProductController::class,'listproducts'])->name('carib
 Route::get('/detailbarang/{id}',[ProductController::class,'detailpage'])->name('detailbarang');
 Route::get('/track',[OrderdetailController::class,'trackingpage'])->name('track');
 Route::get('/history',[OrderdetailController::class,'historypage'])->name('history');
-
-
 
 
 Route::get('/admin',[OrderdetailController::class,'adminpage'])->name('admin');
@@ -86,8 +84,9 @@ Route::post('/fillform/post',[OrderdetailController::class,'fillform'])->name('f
 Route::post('/updatepayment/post',[OrderdetailController::class,'updatepayment'])->name('updatepayment.post');
 Route::get('/ordercomplete', [OrderdetailController::class,'ordercomplete'])->name('ordercomplete');
 
+Route::post('/addwishlist/post',[ProductController::class,'addwishlist'])->name('addwishlist.post');
 
-
+Route::get('/wishlist',[ProductController::class,'wishlistpage'])->name('wishlist');
 
 
 
