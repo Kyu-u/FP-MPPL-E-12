@@ -56,16 +56,16 @@
                         <span class="mr-28 font-bold">Name</span>
                         <span class="ml-2">:</span>
                         <span class="ml-5"><input class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700"
-                                id="name" name="name" type="text" placeholder="Name"></span>
+                                id="name" name="name" type="text" placeholder=""></span>
                     </li>
                     <li class="pt-6 text-gray-500">
                         <span class="mr-28 font-bold">Email</span>
                         <span class="ml-3">:</span>
                         <span class="ml-5"><input class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700"
-                                id="email" name="email" type="email" placeholder="YourEmail@gmail.com"></span>
+                                id="email" name="email" type="email" placeholder=""></span>
                     </li>
                     <li class="pt-6 text-gray-500">
-                        <span class="mr-10 font-bold">Phone Number</span>
+                        <span class="mr-11 font-bold">Phone Number</span>
                         <span class="">:</span>
                         <span class="ml-5"><input class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700"
                                 id="no_telp" name="phone" type="text" placeholder=""></span>
