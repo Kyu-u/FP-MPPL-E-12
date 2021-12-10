@@ -34,11 +34,11 @@
                     </li>
                     <li class="font-bold pt-2">
                         <span>Shipping</span>
-                        <span class="pl-96">Rp 10.000</span>
+                        <span class="pl-96">Rp 10000</span>
                     </li>
                     <li class="font-bold pt-2 pb-10">
                         <span>Total</span>
-                        <span class="ml-8 pl-94">Rp {{$order->price}}</span>
+                        <span class="ml-7 pl-96">Rp {{$order->price}}</span>
                     </li>
                 </ul>
             </div>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="flex flex-col container pt-3 pr-32">
                         <button class="bg-black rounded-md px-6 py-2 text-white w-full" type="submit">
-                            <a  class="text-xl font-semibold">Place Order</a>
+                            <a class="text-xl font-semibold">Place Order</a>
                         </button>
                     </div>
                 </ul>

@@ -10,7 +10,7 @@
 
         @foreach($data as $key=>$product)
 
-        <div class="pt-5 pl-28 pr-10">
+        <div class="py-5 pl-28 pr-10">
             <div class="flex justify-between px-10 container w-full h-56 border-2 border-black rounded-md">
                 <span><img src="{{route('images.displayImage',$product->file)}}" class="h-28 mt-12"></span>
                 <ul class="pt-5 ml-5">

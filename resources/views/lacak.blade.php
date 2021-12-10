@@ -23,7 +23,7 @@
                 <button
                     class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
                     type="button">
-                    <a href="/public/wishlist.html">Wishlist</a>
+                    <a href="{{route('wishlist')}}">Wishlist</a>
                 </button>
             </li>
             <li class="pt-8">
@@ -51,7 +51,7 @@
         <img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-72 pt-16">
     </div>
     @endforeach
-    <div class="col-span-2 col-start-2 px-20 pt-20 mr-56">
+    <div class="col-span-2 col-start-2 px-20 pt-16 pl-36">
         <span class="text-3xl font-bold">
             Item Status :
         </span>
@@ -60,29 +60,6 @@
             {{$item->orderstatus}}
         </span>
         @endforeach
-        {{-- <div class="flex flex-col pt-6">
-            
-            <div class="flex">
-                <img src="/images/bullet-black.png" alt="" class="w-5 h-7 pt-2">
-                <span class="text-2xl font-semibold ml-4">Friday, 25th June 2021</span>
-            </div>
-            <div class="flex">
-                <img src="/images/line.png" alt="" class="h-20 pt-2 ml-2">
-                <span class="text-lg mt-7 ml-6 font-extralight">Payment Complete</span>
-            </div>
-            <div class="flex pt-1">
-                <img src="/images/bullet-black.png" alt="" class="w-5 h-7 pt-2">
-                <span class="text-2xl font-semibold ml-4">Saturday, 26th June 2021</span>
-            </div>
-            <div class="flex">
-                <img src="/images/line.png" alt="" class="h-20 pt-2 ml-2">
-                <span class="text-lg mt-7 ml-6 font-extralight">Order has been shipped</span>
-            </div>
-            <div class="flex pt-1">
-                <img src="/images/bullet-gray.png" alt="" class="w-5 h-7 pt-2">
-                <span class="text-2xl text-gray-400 ml-4 font-light">Order Received</span>
-            </div>
-        </div> --}}
     </div>
 </div>
 @endsection

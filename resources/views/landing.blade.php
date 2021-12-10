@@ -281,7 +281,7 @@
                     <span class="font-bold text-white uppercase mt-4 md:mt-0 mb-2">Senikersku</span>
                     <span class="my-2"><a href="" class="text-gray-300  text-md hover:text-blue-500">Jl. Kalisari Utara
                             I No.60</a></span>
-                    <span class="my-2"><a href="www.instagram.com/senikersku"
+                    <span class="my-2"><a href="https://www.instagram.com/senikersku/" target="_blank"
                             class="text-gray-300  text-md hover:text-blue-500">Instagram</a></span>
                 </div>
                 <div class="flex flex-col">
