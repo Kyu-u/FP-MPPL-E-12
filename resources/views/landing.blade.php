@@ -272,8 +272,8 @@
     <button id="sButton1" onclick="sliderButton1()" class="bg-gray-400 rounded-full w-4 pb-2 "></button>
     <button id="sButton2" onclick="sliderButton2() " class="bg-gray-400 rounded-full w-4 p-2"></button>
 </div>
-<footer class="footer bg-black relative pt-1 border-b-2 border-blue-700">
-    <div class="container mx-auto px-64">
+<footer class="footer bg-black relative pt-1 ">
+    <div class=" container mx-auto px-64">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
                 <img src="/images/senikersku.webp" alt="" class="h-20 my-auto">
