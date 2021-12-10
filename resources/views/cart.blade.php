@@ -17,7 +17,7 @@
                     <li class="grid justify-end pl-56">
                         <form action="{{route('deletecart.post')}}" method="POST"> @csrf <input type="hidden"
                                 name="cart_id" value="{{$product->cart_id}}" id=""><button type="submit"><img
-                                    src="/images/x_mark.png" alt="" class="w-5 h-5 ml-32"></button></form>
+                                    src="/images/x_mark.png" alt="" class="w-5 h-5 ml-36"></button></form>
                     </li>
                     <li class="text-xl font-bold">{{$product->name}}</li>
                     <li id="price{{$key}}" class="pt-1 text-lg font-semibold">{{$product->price}}</li>
@@ -75,7 +75,7 @@
                         $cartid =0;
                         $temp = 0;
                         @endphp
-                        <span class="ml-72">Rp. </span><span id="productstotal">
+                        <span class="ml-72">Rp </span><span id="productstotal">
                             @foreach($data as $product)
                             @php
                             $temp += $product->price*$product->amount;
@@ -90,15 +90,15 @@
                     @endphp
                     <li class="text-xl">
                         <span>Shipping</span>
-                        <span class="ml-80 pl-3.5">Rp 10.000</span>
+                        <span class="ml-80 pl-4">Rp 10000</span>
                     </li>
                     <li class="text-xl">
                         <span>Tax</span>
-                        <span class="ml-96">Rp. </span><span id="tax">{{$temp/10}}</span>
+                        <span class="ml-96">Rp </span><span id="tax">{{$temp/10}}</span>
                     </li>
                     <li class="text-xl">
                         <span>Total</span>
-                        <span class="ml-80 pl-12">Rp. </span><span id="total">{{$finalprice}}</span>
+                        <span class="ml-80 pl-12">Rp </span><span id="total">{{$finalprice}}</span>
                     </li>
                 </ul>
                 <div class="mx-12 border-b-2 border-black">

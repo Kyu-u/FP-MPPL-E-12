@@ -8,9 +8,12 @@
 @foreach($products as $product)
 <div class="pt-6 px-64 flex justify-center">
     <div class="relative flex container w-6/12 h-64 border-2 border-black rounded-md mb-5">
-        <span class="flex ml-8 my-auto w-52 items-center"><img class="mx-auto" src="{{route('images.displayImage',$product->file)}}" alt="" class="h-52"></span>
+        <span class="flex ml-8 my-auto w-52 items-center"><img class="mx-auto"
+                src="{{route('images.displayImage',$product->file)}}" alt="" class="h-52"></span>
         <ul class="my-auto ml-10 flex flex-col">
-            <li class="absolute grid justify-end top-4 right-4"><img src="/images/x_mark.png" alt="" class="w-5 h-5 ml-96"></li>
+            <button>
+                <li class="absolute grid justify-end top-4 right-4 w-5 h-5"><img src="/images/x_mark.png"></li>
+            </button>
             <li class="text-3xl font-bold">{{$product->name}}</li>
             <li class="pt-1 text-lg font-semibold"> Rp {{$product->price}}</li>
             <!-- <div>
