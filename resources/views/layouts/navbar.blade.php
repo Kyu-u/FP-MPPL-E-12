@@ -215,25 +215,25 @@
                         <img src="/images/senikersku.webp" alt="" class="h-10">
                     </a>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <form action="{{route('caribarang')}}" method="GET" role="search">
                         @csrf
                         <button value="Jordan" name="term" type="submit" >AIR JORDAN</button>
                     </form>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <form action="{{route('caribarang')}}" method="GET" role="search">
                         @csrf
                         <button value="Yeezy" name="term" type="submit" >ADIDAS YEEZY</button>
                     </form>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <form action="{{route('caribarang')}}" method="GET" role="search">
                         @csrf
                         <button value="Nike" name="term" type="submit" >NIKE</button>
                     </form>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <a href="{{route('caribarang')}}">BROWSE ALL</a>
                 </li>
             </ul>

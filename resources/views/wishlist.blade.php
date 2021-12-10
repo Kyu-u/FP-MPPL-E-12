@@ -4,12 +4,12 @@
 <div class="flex flex-col items-center">
     <h1 class="font-bold text-4xl pt-8">WISHLIST</h1>
 </div>
-<h2 class="font-semibold text-xl pt-12 px-64">{{$countwishlist}} Items</h2>
+<h2 class="font-semibold text-xl pt-6 flex justify-center">{{$countwishlist}} Items</h2>
 @foreach($products as $product)
-<div class="pt-5 px-64">
-    <div class="relative flex container h-56 border-2 border-black rounded-md">
-        <span><img src="{{route('images.displayImage',$product->file)}}" alt="" class="h-52"></span>
-        <ul class="pt-5 ml-5">
+<div class="pt-6 px-64 flex justify-center">
+    <div class="relative flex container w-6/12 h-64 border-2 border-black rounded-md mb-5">
+        <span class="flex ml-8 my-auto w-52 items-center"><img class="mx-auto" src="{{route('images.displayImage',$product->file)}}" alt="" class="h-52"></span>
+        <ul class="my-auto ml-10 flex flex-col">
             <li class="absolute grid justify-end top-4 right-4"><img src="/images/x_mark.png" alt="" class="w-5 h-5 ml-96"></li>
             <li class="text-3xl font-bold">{{$product->name}}</li>
             <li class="pt-1 text-lg font-semibold"> Rp {{$product->price}}</li>
