@@ -55,7 +55,7 @@
                     </li>
                     <li class="mt-2">
                         <h2 class="text-white font-semibold text-lg">
-                            Welcome, Admin001
+                            Welcome, Admin
                         </h2>
                     </li>
                     <li class="mt-20 px-10 w-full h-12">
