@@ -36,7 +36,7 @@
                 {{$product->p_name}} x {{$product->amount}}
             </div>
             <div class="text-xl font-semibold">
-                {{$product->price*$product->amount}}
+                Rp {{$product->price*$product->amount}}
             </div>
         </div>
         @endforeach
@@ -55,7 +55,7 @@
                 Shipping
             </div>
             <div class="text-xl font-semibold">
-                Rp 10.000
+                Rp 10000
             </div>
         </div>
         <div class="py-3 flex justify-between w-98">
