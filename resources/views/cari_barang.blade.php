@@ -16,9 +16,9 @@
     <ul class="flex flex-wrap gap-32">
         @foreach($products as $product)
         <li class="flex flex-col items-center gap-y-4">
-            <div class="container border-2 border-gray-500 h-96 w-96 overflow-hidden rounded-md">
+            <div class="container items-center border-2 border-gray-500 h-96 w-96 overflow-hidden rounded-md flex">
                 <a href="{{route('detailbarang', $product->id)}}"><img
-                        src="{{route('images.displayImage',$product->file)}}" alt="" class=""></a>
+                        src="{{route('images.displayImage',$product->file)}}" alt="" class="my-auto"></a>
                 <!-- <div class="flex flex-col items-end">
                     <img src="/images/like.png" alt="" class="w-10 h-10 mr-5 mt-8">
                 </div> -->
@@ -27,7 +27,6 @@
             <span class="text-2xl font-bold">{{$product->name}}</span>
             <span class="text-lg font-medium">Rp {{$product->price}}</span>
         </li>
-
         @endforeach
     </ul>
 </div>

@@ -3,8 +3,8 @@
 @section('content')
 <div class="grid grid-cols-2 pt-16">
     <div class="col-span-1 flex flex-col items-center">
-        <div class="container relative border-2 border-gray-500 h-96 w-96 rounded-md">
-            <img src="{{route('images.displayImage',$product->file)}}"alt="" class="">
+        <div class=" container relative border-2 border-gray-500 h-96 w-96 rounded-md flex ">
+            <img src="{{route('images.displayImage',$product->file)}}"alt="" class="my-auto">
             <form class="absolute top-4 right-4" method="POST" action="{{route('addwishlist.post')}}">
             @csrf
             @if(Auth::user())

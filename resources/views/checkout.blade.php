@@ -13,7 +13,7 @@
                 <h1 class="font-bold text-4xl">YOUR ORDER</h1>
                 @foreach($products as $product)
                 <div class="flex flex-col items-center overflow-hidden h-72 pt-10">
-                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-4/5">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-2/5">
                 </div>
                 <div class="flex flex-col items-center">
                     <h1 class="text-2xl font-bold">{{$product->name}}</h1>
@@ -36,9 +36,9 @@
                         <span>Shipping</span>
                         <span class="pl-96">Rp 10.000</span>
                     </li>
-                    <li class="font-bold pt-2">
+                    <li class="font-bold pt-2 pb-10">
                         <span>Total</span>
-                        <span class="ml-8 pl-96">Rp {{$order->price}}</span>
+                        <span class="ml-8 pl-94">Rp {{$order->price}}</span>
                     </li>
                 </ul>
             </div>

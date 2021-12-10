@@ -67,9 +67,9 @@
             </div>
         </div>
     </div>
-    <div class="pt-40 flex flex-col items-center">
+    <div class="pt-64 flex flex-col items-center">
         <a href="{{route('landing')}}">
-            <button class="px-16 py-1 bg-gray-900 text-gray-200 font-semibold text-xl rounded-md">
+            <button class="px-16 py-2 bg-gray-900 text-gray-200 font-semibold text-xl rounded-md">
                 Home
             </button>
         </a>
