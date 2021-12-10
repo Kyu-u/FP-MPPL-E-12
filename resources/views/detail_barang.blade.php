@@ -33,7 +33,7 @@
             <div class="flex">
                 <h1 class="text-2xl font-bold">{{$product->name}}</h1>
             </div>
-            <h2 class="text-md font-light text-xl">{{$product->price}}</h2>
+            <h2 class="text-md font-light text-xl">Rp {{$product->price}}</h2>
             <h2 class="text-md font-light text-xl mt-10">Select Size</h2>
             {{-- <div class="flex mt-4">
             <input class="hidden" id="radio_1" type="radio" name="radio" value="38">
