@@ -125,15 +125,17 @@
                         </button>
                     </li>
                     <li class="mt-6 px-10 w-full h-12">
-                        <button class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
+                        <button
+                            class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="{{route('additem')}}" class="flex items-center">
                                 <img src="/images/shoes-white.png" alt="" id="hoveritem1" class="relative w-8 pl-1">
-                                <img src="/images/shoes-black.png" alt="" id="hoveritem2" class="absolute w-8 pl-1 hidden">
+                                <img src="/images/shoes-black.png" alt="" id="hoveritem2"
+                                    class="absolute w-8 pl-1 hidden">
                                 <span class="pl-4" id="hovertext">Add Item</span>
                             </a>
                         </button>
                     </li>
-                    <li class="mt-6 px-10 w-full h-12">
+                    <!-- <li class="mt-6 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="/public/admin_overview.html" class="flex items-center">
@@ -143,7 +145,7 @@
                                 <span class="pl-4" id="hovertext">Overview</span>
                             </a>
                         </button>
-                    </li>
+                    </li> -->
                     <li class="mt-6 px-10 w-full h-12">
                         <button class="bg-white rounded-md px-2 py-2 w-full h-12">
                             <a href="{{route('updatestatus')}}" class="flex items-center">
@@ -164,7 +166,8 @@
                     </li>
                 </ul>
             </div>
-            <form class="col-span-9 col-start-4 grid grid-cols-9" action="{{route('updatestatus.post')}}" method="POST" enctype="multipart/form-data">
+            <form class="col-span-9 col-start-4 grid grid-cols-9" action="{{route('updatestatus.post')}}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="col-span-4 px-10 pt-6">
                     <h1 class="text-4xl font-bold">
@@ -186,7 +189,7 @@
                     </div>
                     @endforeach
                     <div class="pt-8">
-                        <h1 class="text-2xl font-semibold">Payment Slip</h1>
+                        <h1 class="text-gray-400 font-semibold">Payment Slip</h1>
                         <div class="h-60 w-60 border-2 border-gray-400 rounded-md grid place-items-center">
                             <img id="image-preview" alt="image preview" class="w-48">
                         </div>
@@ -218,8 +221,8 @@
                         <h1 class="text-2xl font-semibold text-white">Rp 20.000.000</h1>
                     </div>
                     <div class="pt-8">
-                        <h1 class="text-2xl font-semibold">Status</h1>
-                        <select class="border-2 rounded-md border-gray-700 px-2 py-1 mt-2" name="orderstatus">
+                        <h1 class="text-gray-400 font-semibold">Status</h1>
+                        <select class="border-2 rounded-md border-gray-400 px-2 py-1" name="orderstatus">
                             <option value="Cancelled">Cancelled</option>
                             <option value="Completed">Completed</option>
                         </select>

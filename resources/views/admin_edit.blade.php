@@ -50,7 +50,7 @@
         <div class="grid grid-cols-12">
             <div class="col-span-3 h-screen bg-black">
                 <ul class="pt-10 flex flex-col items-center">
-                <li>
+                    <li>
                         <img src="/images/senikersku.webp" alt="" class="w-40">
                     </li>
                     <li class="mt-2">
@@ -77,7 +77,7 @@
                             </a>
                         </button>
                     </li>
-                    <li class="mt-6 px-10 w-full h-12">
+                    <!-- <li class="mt-6 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="/public/admin_overview.html" class="flex items-center">
@@ -87,7 +87,7 @@
                                 <span class="pl-4" id="hovertext">Overview</span>
                             </a>
                         </button>
-                    </li>
+                    </li> -->
                     <li class="mt-6 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
