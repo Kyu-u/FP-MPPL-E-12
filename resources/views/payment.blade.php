@@ -13,7 +13,7 @@
                 <h1 class="font-bold text-4xl">YOUR ORDER</h1>
                 @foreach($products as $product)
                 <div class="flex flex-col items-center overflow-hidden h-72 pt-10">
-                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-4/5">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="h-60">
                 </div>
                 <div class="flex flex-col items-center">
                     <h1 class="text-2xl font-bold">{{$product->name}}</h1>
@@ -104,7 +104,7 @@
                 </div>
                 <div id="emoneydisplay" class="hidden">
                     <div class="py-20 ">
-                        <h1 class="ml-5 text-xl font-semibold">0000000 an Christoffer Ivano</h1>
+                        <h1 class="ml-5 text-xl font-semibold">087728112982 a/n Senikersku</h1>
                         <div class="flex font-medium ml-5 text-lg pt-5">
                             <span>Upon Transfer, Please Confirm Payment via</span>
                             <span class="ml-2 underline cursor-pointer">Whatsapp</span>

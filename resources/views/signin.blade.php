@@ -48,29 +48,28 @@
                     <a href="/public/forgot_password.html"
                         class="text-l font-semibold pb-2 underline text-blue-700">Forgot Password</a>
                 </div>
-                <span class="text-gray-400 px-48 pt-24">Or sign up with</span>
-                <div class="flex px-48">
-                    <div class="flex items-end">
+                <!-- <span class="text-gray-400 px-48 pt-24">Or sign up with</span> -->
+                <div class="flex px-48 my-5 justify-end">
+                    <!-- <div class="flex items-end">
                         <button class="bg-white rounded-full w-8 h-8" type="button">
                             <a href="/public/landing_page.html"><img src="/images/facebook.png" alt=""
                                     class="w-8 h-8"></a>
                         </button>
                         <button class="bg-white rounded-full w-8 h-8 ml-10" type="button">
-                            <a href="/public/admin_home.html"><img src="/images/google.png" alt=""
-                                    class="w-8 h-8"></a>
+                            <a href="/public/admin_home.html"><img src="/images/google.png" alt="" class="w-8 h-8"></a>
                         </button>
-                    </div>
-                    <div class="flex flex-col items-end ml-72">
+                    </div> -->
+                    <div class="">
                         <button class="bg-black rounded-xl px-6 py-2 border-4 text-white text-xl font-semibold"
                             type="submit">
                             Sign In
                         </button>
                     </div>
-                    <div class="pt-14">
+                    <!-- <div class="pt-14">
                         <img src="/public/images/google.png" alt="" class="w-8">
-                    </div>
+                    </div> -->
                 </div>
-                <div class="px-48 pt-24">
+                <div class="flex px-48 justify-end">
                     <span class="font-semibold">Don't have an account?</h2>
                         <a href="{{route('signup')}}"><span class="font-semibold text-blue-700 underline">Sign
                                 up</span></a>

@@ -13,7 +13,7 @@
                 <h1 class="font-bold text-4xl">YOUR ORDER</h1>
                 @foreach($products as $product)
                 <div class="flex flex-col items-center overflow-hidden h-72 pt-10">
-                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-4/5">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="" class="w-2/5">
                 </div>
                 <div class="flex flex-col items-center">
                     <h1 class="text-2xl font-bold">{{$product->name}}</h1>
@@ -34,11 +34,11 @@
                     </li>
                     <li class="font-bold pt-2">
                         <span>Shipping</span>
-                        <span class="pl-96">Rp 10.000</span>
+                        <span class="pl-96">Rp 10000</span>
                     </li>
-                    <li class="font-bold pt-2">
+                    <li class="font-bold pt-2 pb-10">
                         <span>Total</span>
-                        <span class="ml-8 pl-96">Rp {{$order->price}}</span>
+                        <span class="ml-7 pl-96">Rp {{$order->price}}</span>
                     </li>
                 </ul>
             </div>
@@ -56,16 +56,16 @@
                         <span class="mr-28 font-bold">Name</span>
                         <span class="ml-2">:</span>
                         <span class="ml-5"><input class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700"
-                                id="name" name="name" type="text" placeholder="Name"></span>
+                                id="name" name="name" type="text" placeholder=""></span>
                     </li>
                     <li class="pt-6 text-gray-500">
                         <span class="mr-28 font-bold">Email</span>
                         <span class="ml-3">:</span>
                         <span class="ml-5"><input class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700"
-                                id="email" name="email" type="email" placeholder="YourEmail@gmail.com"></span>
+                                id="email" name="email" type="email" placeholder=""></span>
                     </li>
                     <li class="pt-6 text-gray-500">
-                        <span class="mr-10 font-bold">Phone Number</span>
+                        <span class="mr-11 font-bold">Phone Number</span>
                         <span class="">:</span>
                         <span class="ml-5"><input class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700"
                                 id="no_telp" name="phone" type="text" placeholder=""></span>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="flex flex-col container pt-3 pr-32">
                         <button class="bg-black rounded-md px-6 py-2 text-white w-full" type="submit">
-                            <a  class="text-xl font-semibold">Place Order</a>
+                            <a class="text-xl font-semibold">Place Order</a>
                         </button>
                     </div>
                 </ul>

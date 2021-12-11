@@ -61,7 +61,7 @@
             <div>
                 <form action="{{route('caribarang')}}" method="GET" role="search">
                     @csrf
-                    <button value="Jordan" name="term" type="submit"  class="underline">view all</button>
+                    <button value="Jordan" name="term" type="submit" class="underline">view all</button>
                 </form>
             </div>
         </div>
@@ -70,14 +70,16 @@
                 @foreach($jordans2 as $key=> $product)
                 @if($key<5) <div class="overflow-hidden">
 
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-                            alt="Mountain">
+                    <div class="overflow-hidden h-40 flex">
+                        <a class="mx-auto my-auto w-40 object-cover float-left"
+                            href="{{route('detailbarang', $product->id)}}">
+                            <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                        </a>
                     </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
+                    <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                         <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
                         <p class="text-gray-700">
-                            {{$product->price}}
+                            Rp {{$product->price}}
                         </p>
                     </div>
             </div>
@@ -95,71 +97,6 @@
                 @endforeach
             @endphp --}}
 
-            <!--Card 1-->
-            {{-- <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/og_red.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 OG Red</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 2-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/og_red.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 OG Red</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 3-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/og_red.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 OG Red</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 4-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/og_red.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 OG Red</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 5-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/og_red.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 OG Red</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div> --}}
         </div>
     </div>
     <div id="slider-4" class="container mx-auto">
@@ -167,14 +104,16 @@
             @foreach($jordans2 as $key=> $product)
             @if($key>=5 && $key<10) <div class="overflow-hidden">
 
-                <div class="overflow-hidden h-32">
-                    <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-                        alt="Mountain">
+                <div class="overflow-hidden h-40 flex">
+                    <a class="mx-auto my-auto w-40 object-cover float-left"
+                        href="{{route('detailbarang', $product->id)}}">
+                        <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    </a>
                 </div>
-                <div class="px-6 py-4 justify-center align-center items-center text-center">
+                <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                     <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
                     <p class="text-gray-700">
-                        {{$product->price}}
+                        Rp {{$product->price}}
                     </p>
                 </div>
         </div>
@@ -188,85 +127,20 @@
             $maxjordan++;
             @endphp
             <div class="overflow-hidden">
-                <div class="overflow-hidden h-32">
-                    <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-        alt="Mountain">
+            <div class="overflow-hidden h-40 flex">
+                    <img class="mx-auto my-auto w-40 object-cover float-left"
+                        src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
     </div>
-    <div class="px-6 py-4 justify-center align-center items-center text-center">
+    <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
         <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
         <p class="text-gray-700">
-            {{$product->price}} {{$maxjordan}}
+            Rp {{$product->price}} {{$maxjordan}}
         </p>
     </div>
 </div>
 
 @endif
 @endforeach --}}
-<!--Card 6-->
-{{-- <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/aj1PSG.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 PSG</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 7-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/aj1PSG.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 PSG</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 8-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/aj1PSG.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 PSG</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 9-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/aj1PSG.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 PSG</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div>
-                <!--Card 10-->
-                <div class="overflow-hidden">
-                    <div class="overflow-hidden h-32">
-                        <img class="w-56 object-cover float-left" src="/public/images/aj1PSG.png"
-                            alt="Mountain">
-                    </div>
-                    <div class="px-6 py-4 justify-center align-center items-center text-center">
-                        <div class="font-semibold text-xl mb-2">Air Jordan 1 PSG</div>
-                        <p class="text-gray-700">
-                            Rp 1.500.000,00
-                        </p>
-                    </div>
-                </div> --}}
 </div>
 </div>
 </div>
@@ -286,7 +160,7 @@
         <div>
             <form action="{{route('caribarang')}}" method="GET" role="search">
                 @csrf
-                <button value="Yeezy" name="term" type="submit"  class="underline">view all</button>
+                <button value="Yeezy" name="term" type="submit" class="underline">view all</button>
             </form>
         </div>
     </div>
@@ -297,14 +171,16 @@
             @foreach($yeezys2 as $key=> $product)
             @if($key<5) <div class="overflow-hidden">
 
-                <div class="overflow-hidden h-32">
-                    <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-                        alt="Mountain">
+                <div class="overflow-hidden h-40 flex">
+                    <a class="mx-auto my-auto w-40 object-cover float-left"
+                        href="{{route('detailbarang', $product->id)}}">
+                        <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    </a>
                 </div>
-                <div class="px-6 py-4 justify-center align-center items-center text-center">
+                <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                     <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
                     <p class="text-gray-700">
-                        {{$product->price}}
+                        Rp {{$product->price}}
                     </p>
                 </div>
         </div>
@@ -319,14 +195,15 @@
         @foreach($yeezys2 as $key=> $product)
         @if($key>4 && $key<10 ) <div class="overflow-hidden">
 
-            <div class="overflow-hidden h-32">
-                <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-                    alt="Mountain">
+            <div class="overflow-hidden h-40 flex">
+                <a class="mx-auto my-auto w-40 object-cover float-left" href="{{route('detailbarang', $product->id)}}">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                </a>
             </div>
-            <div class="px-6 py-4 justify-center align-center items-center text-center">
+            <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                 <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
                 <p class="text-gray-700">
-                    {{$product->price}}
+                    Rp {{$product->price}}
                 </p>
             </div>
     </div>
@@ -348,7 +225,7 @@
         <div>
             <form action="{{route('caribarang')}}" method="GET" role="search">
                 @csrf
-                <button value="Nike" name="term" type="submit"  class="underline">view all</button>
+                <button value="Nike" name="term" type="submit" class="underline">view all</button>
             </form>
         </div>
     </div>
@@ -357,16 +234,18 @@
         <div class="py-16 grid grid-cols-1 xl:grid-cols-5 gap-5">
             <!--Card 1-->
             @foreach($nikes2 as $key=> $product)
-            @if($key<5 ) <div class="overflow-hidden">
+            @if($key<5 ) <div class="overflow-hidden ">
 
-                <div class="overflow-hidden h-32">
-                    <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-                        alt="Mountain">
+                <div class="overflow-hidden h-40 flex">
+                    <a class="mx-auto my-auto w-40 object-cover float-left"
+                        href="{{route('detailbarang', $product->id)}}">
+                        <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    </a>
                 </div>
-                <div class="px-6 py-4 justify-center align-center items-center text-center">
+                <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                     <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
                     <p class="text-gray-700">
-                        {{$product->price}}
+                        Rp {{$product->price}}
                     </p>
                 </div>
         </div>
@@ -381,16 +260,18 @@
         @foreach($nikes2 as $key=> $product)
         @if($key>4 && $key<10 ) <div class="overflow-hidden">
 
-            <div class="overflow-hidden h-32">
-                <img class="w-56 object-cover float-left" src="{{route('images.displayImage',$product->file)}}"
-                    alt="Mountain">
+            <div class="overflow-hidden h-40 flex">
+                <a class="mx-auto my-auto w-40 object-cover float-left" href="{{route('detailbarang', $product->id)}}">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                </a>
             </div>
-            <div class="px-6 py-4 justify-center align-center items-center text-center">
+            <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                 <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
                 <p class="text-gray-700">
-                    {{$product->price}}
+                    Rp {{$product->price}}
                 </p>
             </div>
+
     </div>
 
     @endif
@@ -402,22 +283,24 @@
     <button id="sButton1" onclick="sliderButton1()" class="bg-gray-400 rounded-full w-4 pb-2 "></button>
     <button id="sButton2" onclick="sliderButton2() " class="bg-gray-400 rounded-full w-4 p-2"></button>
 </div>
-<footer class="footer bg-black relative pt-1 border-b-2 border-blue-700">
-    <div class="container mx-auto px-64">
+<footer class="footer bg-black relative pt-1 ">
+    <div class=" container mx-auto px-64">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+                <img src="/images/senikersku.webp" alt="" class="h-20 my-auto">
                 <div class="flex flex-col">
-                    <img src="/images/senikersku.webp" alt="" class="h-20">
-                    <span class="font-bold text-white uppercase mb-2 text-center">Senikersku</span>
-                    <span class="my-2"><a href="#" class="text-gray-300  text-md hover:text-blue-500">alamat</a></span>
-                    <span class="my-2"><a href="#" class="text-gray-300  text-md hover:text-blue-500">ig</a></span>
+                    <span class="font-bold text-white uppercase mt-4 md:mt-0 mb-2">Senikersku</span>
+                    <span class="my-2"><a href="" class="text-gray-300  text-md hover:text-blue-500">Jl. Kalisari Utara
+                            I No.60</a></span>
+                    <span class="my-2"><a href="https://www.instagram.com/senikersku/" target="_blank"
+                            class="text-gray-300  text-md hover:text-blue-500">Instagram</a></span>
                 </div>
                 <div class="flex flex-col">
                     <span class="font-bold text-white uppercase mt-4 md:mt-0 mb-2">Customer Service</span>
                     <span class="my-2"><a href="#" class="text-gray-300  text-md hover:text-blue-500">Contact
                             Us</a></span>
-                    <span class="my-2"><a href="#" class="text-gray-300  text-md hover:text-blue-500">Confirmation
-                            Payment</a></span>
+                    <span class="my-2"><a href="#" class="text-gray-300  text-md hover:text-blue-500">Payment
+                            Confirmation</a></span>
                 </div>
             </div>
         </div>
@@ -426,7 +309,7 @@
         <div class="mt-16 border-t-2 border-gray-300 flex flex-col items-center">
             <div class="text-center py-3">
                 <p class="text-sm text-white font-bold mb-2">
-                    © 2021 by B06
+                    © 2021 by C09
                 </p>
             </div>
         </div>

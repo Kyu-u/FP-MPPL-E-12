@@ -28,9 +28,9 @@
         <div class="grid grid-cols-5">
             <div style="background-image: url('/images/signup.png')"
                 class="bg-cover h-landing bg-local relative col-span-2">
-                <img src="/images/signup.png" alt="" class="object-contain"> 
+                <img src="/images/signup.png" alt="" class="object-contain">
             </div>
-            <div class="flex flex-col col-start-3 col-span-3">
+            <div class="flex flex-col col-start-3 col-span-3 ">
                 <div class="py-10 text-center">
                     <h1 class="text-3xl font-bold">
                         Sign Up to Senikersku
@@ -54,14 +54,14 @@
                         class="shadow-lg appearance-none rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         id="password" name="password" type="password" placeholder="8 Characters Minimum">
                 </div>
-                <div class="flex flex-col items-end pt-14 px-48">
-                    <button class="bg-black rounded-lg px-6 py-2 text-sm border-4 text-white font-semibold"
+                <div class="flex flex-col items-end my-6 px-48">
+                    <button class="bg-black rounded-xl px-6 py-2 border-4 text-white text-xl font-semibold"
                         type="submit">
                         Sign Up
                     </button>
                 </div>
-                <div class="px-48 py-24">
-                    <span class="font-semibold">Already have an account?</h2>
+                <div class="flex px-48 justify-end">
+                    <span class="font-semibold justify-end">Already have an account?</h2>
                         <a href="{{route('signin')}}"><span class="font-semibold text-blue-700 underline">Sign
                                 in</span></a>
                 </div>

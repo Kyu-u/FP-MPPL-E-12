@@ -9,14 +9,14 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Productdetail;
+use App\Models\Wishlist;
+use DB;
 
 class ProductController extends Controller
 {
-
-
     public function addpage()
     {
-        $products = \App\Models\Product::paginate(3);
+        $products = \App\Models\Product::paginate(8);
         return view('admin_add', compact('products'));
     }
     public function editpage($id)
@@ -141,6 +141,8 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'category' => 'required',
+            // 'size' => 'required',
+            // 'stock' => 'required',
 
         ]);
 
@@ -160,6 +162,9 @@ class ProductController extends Controller
                 "file" => $request->file->hashName(),
                 "price" => $request->get('price'),
                 "category" => $request->get('category'),
+                // "size" => $request->get('size'),
+                // "stock" => $request->get('stock'),
+
 
             ]);
             $product->save(); // Finally, save the record.
@@ -167,6 +172,24 @@ class ProductController extends Controller
 
         return redirect('additem');
 
+    }
+
+    public function formdetail(Request $request){
+        $request->validate([
+            'id' => 'required',
+            'size' => 'required',
+            'stock' => 'required',
+
+        ]);
+
+        $productdetail = new Productdetail([
+            "product_id" => $request->get('id'),
+            "size" => $request->get('size'),
+            "stock" => $request->get('stock'),
+
+        ]);
+        $productdetail->save(); // Finally, save the record.
+        return redirect()->route('additem'); 
     }
 
     public function listproducts(Request $request)
@@ -192,21 +215,47 @@ class ProductController extends Controller
         // dd($product);
         return view('admin_detail', compact('product'));
     }
-    public function formdetail(Request $request){
+  
+
+    public function addwishlist(Request $request){
         $request->validate([
-            'id' => 'required',
-            'size' => 'required',
-            'stock' => 'required',
-
+            'product_id' => 'required',
+            'user_id' => 'required',
         ]);
 
-        $productdetail = new Productdetail([
-            "product_id" => $request->get('id'),
-            "size" => $request->get('size'),
-            "stock" => $request->get('stock'),
+        if(!Wishlist::where('product_id',$request->get('product_id'))->first()){
+            $wishlist = new Wishlist([
+                "product_id" => $request->get('product_id'),
+                "user_id" => $request->get('user_id'),
+            ]);
+            $wishlist->save();
+        }
 
+        return redirect()->route('wishlist'); 
+    }
+
+    public function wishlistpage(){
+        $wishlistitems=Wishlist::where('user_id',Auth::user()->id)->get();
+        // dd($wishlistitems);
+        $countwishlist = count($wishlistitems);
+        $productids = Wishlist::where('user_id', Auth::user()->id)->get('product_id');
+        $products = Product::whereIn('id', $productids)->get();
+
+        return view('wishlist', compact('wishlistitems','countwishlist','products'));
+    }
+
+    public function destroywishlist(Request $request){
+        $request->validate([
+            'product_id' => 'required',
+            'user_id' => 'required',
         ]);
-        $productdetail->save(); // Finally, save the record.
-        return redirect()->route('additem'); 
+
+        DB::table('wishlists')->where('user_id', $request->get('user_id'))->where('product_id', $request->get('product_id'))->delete();
+
+        return redirect()->route('wishlist');
+    }
+
+    public function destroyproduct(Request $request){
+        DB::table('wishlist')->where('id_siswa', $id)->delete();
     }
 }

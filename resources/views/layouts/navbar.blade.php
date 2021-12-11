@@ -215,25 +215,25 @@
                         <img src="/images/senikersku.webp" alt="" class="h-10">
                     </a>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <form action="{{route('caribarang')}}" method="GET" role="search">
                         @csrf
                         <button value="Jordan" name="term" type="submit" >AIR JORDAN</button>
                     </form>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <form action="{{route('caribarang')}}" method="GET" role="search">
                         @csrf
                         <button value="Yeezy" name="term" type="submit" >ADIDAS YEEZY</button>
                     </form>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <form action="{{route('caribarang')}}" method="GET" role="search">
                         @csrf
                         <button value="Nike" name="term" type="submit" >NIKE</button>
                     </form>
                 </li>
-                <li class="px-8 py-5 text-white font-semibold hover:text-gray-300 text-l">
+                <li class="px-8 my-auto text-white font-semibold hover:text-gray-300 text-l">
                     <a href="{{route('caribarang')}}">BROWSE ALL</a>
                 </li>
             </ul>
@@ -241,7 +241,7 @@
         <div class="w-2/5 py-5">
             <ul class="flex justify-end px-20 mr-10">
                 <li class="px-2 text-white font-semibold hover:text-gray-300">
-                    <a href="/public/wishlist.html"><img src="/images/wishlist.png" alt="" class="w-8 h-8"></a>
+                    <a href="{{route('wishlist')}}"><img src="/images/wishlist.png" alt="" class="w-8 h-8"></a>
                 </li>
                 <li class="px-2 text-white font-semibold hover:text-gray-300">
                     <a href="{{route('cartpage')}}"><img src="/images/cart.png" alt="" class="w-8 h-8"></a>

@@ -36,7 +36,7 @@
                 {{$product->p_name}} x {{$product->amount}}
             </div>
             <div class="text-xl font-semibold">
-                {{$product->price*$product->amount}}
+                Rp {{$product->price*$product->amount}}
             </div>
         </div>
         @endforeach
@@ -55,7 +55,7 @@
                 Shipping
             </div>
             <div class="text-xl font-semibold">
-                Rp 10.000
+                Rp 10000
             </div>
         </div>
         <div class="py-3 flex justify-between w-98">
@@ -67,9 +67,9 @@
             </div>
         </div>
     </div>
-    <div class="pt-40 flex flex-col items-center">
+    <div class="pt-64 flex flex-col items-center">
         <a href="{{route('landing')}}">
-            <button class="px-16 py-1 bg-gray-900 text-gray-200 font-semibold text-xl rounded-md">
+            <button class="px-16 py-2 bg-gray-900 text-gray-200 font-semibold text-xl rounded-md">
                 Home
             </button>
         </a>

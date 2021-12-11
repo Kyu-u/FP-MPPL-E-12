@@ -50,12 +50,12 @@
         <div class="grid grid-cols-12">
             <div class="col-span-3 h-screen bg-black">
                 <ul class="pt-10 flex flex-col items-center">
-                <li>
+                    <li>
                         <img src="/images/senikersku.webp" alt="" class="w-40">
                     </li>
                     <li class="mt-2">
                         <h2 class="text-white font-semibold text-lg">
-                            Welcome, Admin001
+                            Welcome, Admin
                         </h2>
                     </li>
                     <li class="mt-20 px-10 w-full h-12">
@@ -77,7 +77,7 @@
                             </a>
                         </button>
                     </li>
-                    <li class="mt-6 px-10 w-full h-12">
+                    <!-- <li class="mt-6 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
                             <a href="/public/admin_overview.html" class="flex items-center">
@@ -87,7 +87,7 @@
                                 <span class="pl-4" id="hovertext">Overview</span>
                             </a>
                         </button>
-                    </li>
+                    </li> -->
                     <li class="mt-6 px-10 w-full h-12">
                         <button
                             class="shoes bg-black border-2 border-white rounded-md px-2 py-2 w-full h-12 text-white hover:bg-white hover:border-black hover:text-black">
@@ -102,7 +102,7 @@
                     <li class="mt-44 px-10 w-full h-10">
                         <button
                             class="bg-red-700 rounded-md px-2 py-2 w-full h-10 text-white hover:bg-red-800 hover:text-gray-200">
-                            <a href="/public/signin.html" class="flex flex-col items-center">
+                            <a href="{{route('signin')}}" class="flex flex-col items-center">
                                 <span class="font-bold text-md">Sign Out</span>
                             </a>
                         </button>
@@ -117,9 +117,8 @@
 
                     </div>
 
-
                     <ul class="text-lg">
-                        
+
 
                         <li class="pt-6">
                             <span class="font-bold">Size </span><br>
@@ -130,11 +129,10 @@
                         <li class="pt-6">
                             <span class="font-bold">Stock :</span><br>
                             <span class=""><input
-                                    class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
-                                    id="stock" name="stock" type="text"
-                                    placeholder=""></span>
+                                    class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700" id="stock"
+                                    name="stock" type="text" placeholder=""></span>
                         </li>
-                    
+
 
                     </ul>
                     <div class="flex justify-end pt-2">

@@ -8,18 +8,24 @@
     <div class="grid-span-1 border-r-2 border-gray-200">
         <ul class="pt-16 pl-28">
             <li>
-                <button class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white" type="button">
+                <button
+                    class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
+                    type="button">
                     <a href="{{route('profile')}}">My Account</a>
                 </button>
             </li>
             <li class="pt-8">
-                <button class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white" type="button">
+                <button
+                    class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
+                    type="button">
                     <a href="{{route('track')}}">Track Shipping</a>
                 </button>
             </li>
             <li class="pt-8">
-                <button class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white" type="button">
-                    <a href="/public/wishlist.html">Wishlist</a>
+                <button
+                    class="bg-white rounded-md px-6 py-2 text-lg text-black font-semibold hover:bg-black hover:text-white"
+                    type="button">
+                    <a href="{{route('wishlist')}}">Wishlist</a>
                 </button>
             </li>
             <li class="pt-8">
@@ -47,31 +53,34 @@
             <ul class="pt-6 text-lg divide-y">
                 @foreach($completeds as $item)
                 <li class="flex pt-6">
-                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-48"></span>
+                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt=""
+                            class="w-48"></span>
                     <ul class="">
                         <li class="text-md font-bold">{{$item->name}}</li>
                         <li class="pt-1 text-sm">Order has arrived</li>
-                        <li class="pt-1 text-gray-400 underline text-sm">Track Shipping</li>
+                        <!-- <li class="pt-1 text-gray-400 underline text-sm">Track Shipping</li> -->
                     </ul>
                     <div class="flex flex-col items-center pt-14 pl-28">
                         <button class="bg-black rounded-md px-6 py-2 text-sm text-white font-semibold" type="button">
-                            <a href="/public/beri_ulasan.html">Give Review</a>
+                            <a href="">Give Review</a>
                         </button>
                     </div>
                 </li>
                 @endforeach
                 @foreach($ongoings as $item)
                 <li class="flex pt-6">
-                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-48"></span>
+                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt=""
+                            class="w-48"></span>
                     <ul class="">
                         <li class="text-md font-bold">{{$item->name}}</li>
-                        <li class="pt-1 text-sm">Order has been shipped</li>
+                        <li class="pt-1 text-sm">Order is being verified</li>
                         <li class="pt-1 underline text-sm">
-                            <a href="/public/lacak_pemesanan.html">Track Shipping</a>
+                            <a href="{{route('track')}}">Track Shipping</a>
                         </li>
                     </ul>
                     <div class="flex flex-col items-center pt-14 pl-36">
-                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold" type="button" disabled>
+                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold"
+                            type="button" disabled>
                             Give Review
                         </button>
                     </div>
@@ -79,16 +88,18 @@
                 @endforeach
                 @foreach($cancelleds as $item)
                 <li class="flex pt-6">
-                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt="" class="w-48"></span>
+                    <span class="mr-20 font-bold"><img src="{{ route('images.displayImage',$item->file) }}" alt=""
+                            class="w-48"></span>
                     <ul class="">
                         <li class="text-md font-bold">{{$item->name}}</li>
                         <li class="pt-1 text-sm">Order has been cancelled</li>
                         <li class="pt-1 underline text-sm">
-                            <a href="/public/lacak_pemesanan.html">Track Shipping</a>
+                            <a href="{{route('track')}}">Track Shipping</a>
                         </li>
                     </ul>
                     <div class="flex flex-col items-center pt-14 pl-36">
-                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold" type="button" disabled>
+                        <button class="bg-gray-200 rounded-md px-6 py-2 text-sm text-gray-400 font-semibold"
+                            type="button" disabled>
                             Give Review
                         </button>
                     </div>
