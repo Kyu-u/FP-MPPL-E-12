@@ -71,7 +71,7 @@
                         </li>
                         <li class="pt-6">
                             <span class="mr-10 font-bold">Phone Number</span>
-                            <span class="">:</span>
+                            <span class="ml-1">:</span>
                             <span class="ml-5"><input
                                     class="border-2 border-gray-500 rounded w-1/2 py-1 px-3 text-gray-700" id="no_telp"
                                     type="text" name="phone" placeholder=""></span>
