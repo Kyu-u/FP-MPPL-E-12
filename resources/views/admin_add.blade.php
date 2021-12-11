@@ -102,7 +102,7 @@
                     <li class="mt-44 px-10 w-full h-10">
                         <button
                             class="bg-red-700 rounded-md px-2 py-2 w-full h-10 text-white hover:bg-red-800 hover:text-gray-200">
-                            <a href="/public/signin.html" class="flex flex-col items-center">
+                            <a href="{{route('signin')}}" class="flex flex-col items-center">
                                 <span class="font-bold text-md">Sign Out</span>
                             </a>
                         </button>
@@ -161,7 +161,6 @@
                                         </div>
                                     </div>
 
-
                                     <ul class="text-lg">
                                         <li class="pt-6">
                                             <span class="font-bold">Item Name :</span><br>
@@ -169,19 +168,31 @@
                                                     class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
                                                     id="name" name="name" type="text" placeholder=""></span>
                                         </li>
-
-                                        <li class="pt-6">
-                                            <span class="font-bold">Price :</span><br>
-                                            <span class=""><input
-                                                    class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
-                                                    id="price" name="price" type="text" placeholder=""></span>
-                                        </li>
                                         <li class="pt-6">
                                             <span class="font-bold">Item Category :</span><br>
                                             <span class=""><input
                                                     class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
                                                     id="category" name="category" type="text" placeholder=""></span>
                                         </li>
+                                        <li class="pt-6">
+                                            <span class="font-bold">Price :</span><br>
+                                            <span class=""><input
+                                                    class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
+                                                    id="price" name="price" type="text" placeholder=""></span>
+                                        </li>
+
+                                        <!-- <li class="pt-6">
+                                            <span class="font-bold">Size </span><br>
+                                            <span class=""><input
+                                                    class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
+                                                    id="price" name="size" type="text" placeholder=""></span>
+                                        </li>
+                                        <li class="pt-6">
+                                            <span class="font-bold">Stock :</span><br>
+                                            <span class=""><input
+                                                    class="border-2 border-gray-500 rounded w-full py-1 px-3 text-gray-700"
+                                                    id="stock" name="stock" type="text" placeholder=""></span>
+                                        </li> -->
                                         <li class="flex flex-col pt-6">
                                             <span class="font-bold pb-2">Item Image :</span>
                                             <div class="flex items-center">
@@ -209,7 +220,7 @@
             </div>
             <div class="col-span-2 col-start-6 w-full">
                 <h1 class="mt-10 text-3xl font-bold text-white">
-                    Pending Order
+                    .
                 </h1>
                 <div class="flex flex-col pt-14">
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
@@ -227,7 +238,7 @@
             </div>
             <div class="col-span-2 col-start-8 w-full">
                 <h1 class="mt-10 text-3xl font-bold text-white">
-                    Pending Order
+                    .
                 </h1>
                 <div class="flex flex-col pt-14">
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
@@ -238,6 +249,8 @@
                     <label class="flex flex-col items-center py-4 border-b-2 border-black">
                         <span class="ml-6 text-lg font-semibold">{{$product->file}}</span>
                     </label>
+                    <!-- <span class="flex ml-8 my-auto w- items-center"><img class="mx-auto"
+                            src="{{route('images.displayImage',$product->file)}}" alt="" class="h-52"></span> -->
                     @endforeach
 
 
@@ -245,7 +258,7 @@
             </div>
             <div class="col-span-3 col-start-10 w-full">
                 <h1 class="mt-10 text-3xl font-bold text-white">
-                    Pending Order
+                    .
                 </h1>
                 <div class="flex flex-col pt-14 pr-10">
                     <label class="flex flex-col items-end mt-3 pb-2 border-b-2 border-black">
@@ -254,8 +267,8 @@
                     @foreach($products as $product)
                     <div class="flex flex-col items-end border-b-2 border-black">
                         <label class="flex items-center py-4">
-                            <span class="ml-6 text-lg font-semibold pr-6">Rp. {{$product->price}}</span>
-                            <span> <a href="{{route('edititem', $product->id)}}"><button class="modal-open"><img
+                            <span class="ml-6 text-lg font-semibold pr-6">Rp {{$product->price}}</span>
+                            <span> <a href="{{route('edititem', $product->id)}}"><button class=""><img
                                             src="/images/more.png" alt="" class="w-6 h-1.5"></button></a> </span>
                         </label>
                     </div>

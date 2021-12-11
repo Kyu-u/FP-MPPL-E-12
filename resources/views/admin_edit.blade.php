@@ -55,7 +55,7 @@
                     </li>
                     <li class="mt-2">
                         <h2 class="text-white font-semibold text-lg">
-                            Welcome, Admin001
+                            Welcome, Admin
                         </h2>
                     </li>
                     <li class="mt-20 px-10 w-full h-12">
@@ -102,7 +102,7 @@
                     <li class="mt-44 px-10 w-full h-10">
                         <button
                             class="bg-red-700 rounded-md px-2 py-2 w-full h-10 text-white hover:bg-red-800 hover:text-gray-200">
-                            <a href="/public/signin.html" class="flex flex-col items-center">
+                            <a href="{{route('signin')}}" class="flex flex-col items-center">
                                 <span class="font-bold text-md">Sign Out</span>
                             </a>
                         </button>

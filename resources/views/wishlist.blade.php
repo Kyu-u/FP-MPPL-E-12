@@ -11,9 +11,23 @@
         <span class="flex ml-8 my-auto w-52 items-center"><img class="mx-auto"
                 src="{{route('images.displayImage',$product->file)}}" alt="" class="h-52"></span>
         <ul class="my-auto ml-10 flex flex-col">
-            <button>
-                <li class="absolute grid justify-end top-4 right-4 w-5 h-5"><img src="/images/x_mark.png"></li>
-            </button>
+            <li class="absolute grid justify-end top-4 right-4 w-5 h-5">
+                <!-- <form action="{{route('destroywishlist.post')}}" method="POST"> @csrf <input type="hidden"
+                        name="product_id" value="{{$product->product_id}}" id=""><button type="submit"><img
+                            src="/images/x_mark.png" alt="" class=""></button></form> -->
+                <form class="" method="POST" action="{{route('destroywishlist.post')}}">
+                    @csrf
+                    @if(Auth::user())
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    @else
+                    <input type="hidden" name="user_id" value="-1">
+                    @endif
+                    <input type="hidden" value="{{$product->id}}" name="product_id">
+                    <button type="submit">
+                        <img src="/images/x_mark.png" alt="" class="">
+                    </button>
+                </form>
+            </li>
             <li class="text-3xl font-bold">{{$product->name}}</li>
             <li class="pt-1 text-lg font-semibold"> Rp {{$product->price}}</li>
             <!-- <div>

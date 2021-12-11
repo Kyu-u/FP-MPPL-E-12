@@ -110,7 +110,7 @@
                     </li>
                     <li class="mt-2">
                         <h2 class="text-white font-semibold text-lg">
-                            Welcome, Admin001
+                            Welcome, Admin
                         </h2>
                     </li>
                     <li class="mt-20 px-10 w-full h-12">
@@ -203,7 +203,7 @@
                 </div>
                 <div class="col-span-5 col-start-5 px-10 pt-6">
                     <h1 class="text-4xl font-bold text-white">
-                        Order Status
+                        .
                     </h1>
                     @foreach($orders as $order)
 
@@ -217,8 +217,8 @@
                     </div>
                     @endforeach
                     <div class="pt-6">
-                        <h2 class="font-semibold text-white">Cost</h2>
-                        <h1 class="text-2xl font-semibold text-white">Rp 20.000.000</h1>
+                        <h2 class="font-semibold text-white">.</h2>
+                        <h1 class="text-2xl font-semibold text-white">.</h1>
                     </div>
                     <div class="pt-8">
                         <h1 class="text-gray-400 font-semibold">Status</h1>

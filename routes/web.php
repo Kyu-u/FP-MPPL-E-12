@@ -88,5 +88,4 @@ Route::post('/addwishlist/post',[ProductController::class,'addwishlist'])->name(
 
 Route::get('/wishlist',[ProductController::class,'wishlistpage'])->name('wishlist');
 
-
-
+Route::post('/destroywishlist/post',[ProductController::class,'destroywishlist'])->name('destroywishlist.post');

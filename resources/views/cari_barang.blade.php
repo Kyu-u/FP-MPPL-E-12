@@ -8,7 +8,8 @@
         <input name="term" id="term" type="text"
             class="container h-10 px-3 border-t-2 border-b-2 border-l-2 border-black rounded-l-md"
             placeholder="Search...">
-        <button type="submit" class=" px-3 bg-gray-100 border-t-2 border-l-2 border-b-2 border-r-2 border-black rounded-r-md"><img
+        <button type="submit"
+            class=" px-3 bg-gray-100 border-t-2 border-l-2 border-b-2 border-r-2 border-black rounded-r-md"><img
                 src="/images/search.png" alt="" class="w-6 h-5 my-auto "></button>
     </div>
 </form>

@@ -32,7 +32,7 @@
                     </li>
                     <li class="mt-2">
                         <h2 class="text-white font-semibold text-lg">
-                            Welcome, Admin001
+                            Welcome, Admin
                         </h2>
                     </li>
                     <li class="mt-20 px-10 w-full h-12">
@@ -79,7 +79,7 @@
                     <li class="mt-44 px-10 w-full h-10">
                         <button
                             class="bg-red-700 rounded-md px-2 py-2 w-full h-10 text-white hover:bg-red-800 hover:text-gray-200">
-                            <a href="/public/signin.html" class="flex flex-col items-center">
+                            <a href="{{route('signin')}}" class="flex flex-col items-center">
                                 <span class="font-bold text-md">Sign Out</span>
                             </a>
                         </button>
@@ -121,7 +121,7 @@
             </div>
             <div class="col-span-2 col-start-6 w-full">
                 <h1 class="mt-10 text-3xl font-bold text-white">
-                    Pending Order
+                    .
                 </h1>
                 <div class="flex flex-col pt-14">
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
@@ -154,7 +154,7 @@
             </div>
             <div class="col-span-2 col-start-8 w-full">
                 <h1 class="mt-10 text-3xl font-bold text-white">
-                    Pending Order
+                    .
                 </h1>
                 <div class="flex flex-col pt-14">
                     <label class="flex flex-col items-center mt-3 pb-2 border-b-2 border-black">
@@ -187,7 +187,7 @@
             </div>
             <div class="col-span-3 col-start-10 w-full">
                 <h1 class="mt-10 text-3xl font-bold text-white">
-                    Pending Order
+                    .
                 </h1>
                 <div class="flex flex-col pt-14 pr-10">
                     <div class="flex flex-col items-end border-b-2 border-black">

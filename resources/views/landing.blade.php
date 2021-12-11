@@ -71,8 +71,10 @@
                 @if($key<5) <div class="overflow-hidden">
 
                     <div class="overflow-hidden h-40 flex">
-                        <img class="mx-auto my-auto w-40 object-cover float-left"
-                            src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                        <a class="mx-auto my-auto w-40 object-cover float-left"
+                            href="{{route('detailbarang', $product->id)}}">
+                            <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                        </a>
                     </div>
                     <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                         <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
@@ -103,8 +105,10 @@
             @if($key>=5 && $key<10) <div class="overflow-hidden">
 
                 <div class="overflow-hidden h-40 flex">
-                    <img class="mx-auto my-auto w-40 object-cover float-left"
-                        src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    <a class="mx-auto my-auto w-40 object-cover float-left"
+                        href="{{route('detailbarang', $product->id)}}">
+                        <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    </a>
                 </div>
                 <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                     <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
@@ -168,8 +172,10 @@
             @if($key<5) <div class="overflow-hidden">
 
                 <div class="overflow-hidden h-40 flex">
-                    <img class="mx-auto my-auto w-40 object-cover float-left"
-                        src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    <a class="mx-auto my-auto w-40 object-cover float-left"
+                        href="{{route('detailbarang', $product->id)}}">
+                        <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    </a>
                 </div>
                 <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                     <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
@@ -190,8 +196,9 @@
         @if($key>4 && $key<10 ) <div class="overflow-hidden">
 
             <div class="overflow-hidden h-40 flex">
-                <img class="mx-auto my-auto w-40 object-cover float-left"
-                    src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                <a class="mx-auto my-auto w-40 object-cover float-left" href="{{route('detailbarang', $product->id)}}">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                </a>
             </div>
             <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                 <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
@@ -227,11 +234,13 @@
         <div class="py-16 grid grid-cols-1 xl:grid-cols-5 gap-5">
             <!--Card 1-->
             @foreach($nikes2 as $key=> $product)
-            @if($key<5 ) <div class="overflow-hidden">
+            @if($key<5 ) <div class="overflow-hidden ">
 
                 <div class="overflow-hidden h-40 flex">
-                    <img class="mx-auto my-auto w-40 object-cover float-left"
-                        src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    <a class="mx-auto my-auto w-40 object-cover float-left"
+                        href="{{route('detailbarang', $product->id)}}">
+                        <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                    </a>
                 </div>
                 <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                     <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
@@ -252,8 +261,9 @@
         @if($key>4 && $key<10 ) <div class="overflow-hidden">
 
             <div class="overflow-hidden h-40 flex">
-                <img class="mx-auto my-auto w-40 object-cover float-left"
-                    src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                <a class="mx-auto my-auto w-40 object-cover float-left" href="{{route('detailbarang', $product->id)}}">
+                    <img src="{{route('images.displayImage',$product->file)}}" alt="Mountain">
+                </a>
             </div>
             <div class="px-6 pt-2 pb-4 justify-center align-center items-center text-center">
                 <div class="font-semibold text-xl mb-2">{{$product->name}}</div>
@@ -261,6 +271,7 @@
                     Rp {{$product->price}}
                 </p>
             </div>
+
     </div>
 
     @endif
