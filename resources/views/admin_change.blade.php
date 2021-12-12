@@ -227,11 +227,7 @@
                         <h1 class="text-2xl font-semibold">Transfer Bank (Bank {{$order->payment}})</h1>
                     </div>
                     @endforeach
-                    <div class="pt-6">
-                        <h2 class="font-semibold text-white">.</h2>
-                        <h1 class="text-2xl font-semibold text-white">.</h1>
-                    </div>
-                    <div class="pt-12">
+                    <div class="pt-32">
                         <h1 class="text-gray-400 font-semibold">Status</h1>
                         <select class="border-2 rounded-md border-gray-400 px-2 py-1" name="orderstatus">
                             <option value="Cancelled">Cancelled</option>
