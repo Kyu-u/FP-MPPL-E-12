@@ -169,32 +169,32 @@
             <form class="col-span-9 col-start-4 grid grid-cols-9" action="{{route('updatestatus.post')}}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
-                <div class="col-span-4 px-10 pt-6">
-                    <h1 class="text-4xl font-bold">
+                <div class="col-span-4">
+                    <h1 class="pl-10 mt-10 text-3xl font-bold">
                         Order Status
                     </h1>
                     @foreach($orders as $order)
                     <input type="hidden" name="id" value="{{$order->id}}">
-                    <div class="pt-10">
+                    <div class="px-10 pt-6">
                         <h2 class="text-gray-400 font-semibold">Order ID</h2>
                         <h1 class="text-2xl font-semibold">{{$order->id}}</h1>
                     </div>
-                    <div class="pt-6">
+                    <div class="px-10 pt-6">
                         <h2 class="text-gray-400 font-semibold">Order Date</h2>
                         <h1 class="text-2xl font-semibold">{{$order->updated_at}}</h1>
                     </div>
-                    <div class="pt-6">
+                    <div class="px-10 pt-6">
                         <h2 class="text-gray-400 font-semibold">Payment</h2>
                         <h1 class="text-2xl font-semibold">Rp {{$order->price}}</h1>
                     </div>
                     @endforeach
-                    <div class="pt-8">
+                    <div class="px-10 pt-6">
                         <h1 class="text-gray-400 font-semibold">Payment Slip</h1>
                         <div class="h-60 w-60 border-2 border-gray-400 rounded-md grid place-items-center">
                             <img id="image-preview" alt="image preview" class="w-48">
                         </div>
                     </div>
-                    <div class="pt-5">
+                    <div class="px-10 pt-6">
                         <label class="bg-black rounded-md px-6 py-2 text-sm text-white font-semibold cursor-pointer">
                             Add File
                             <input id="image-source" onchange="previewImage();" type="file" name="file" class="hidden">
@@ -206,19 +206,19 @@
                         .
                     </h1>
                     @foreach($orders as $order)
-                    <div class="pt-10">
+                    <div class="pt-8">
                         <h2 class="text-gray-400 font-semibold">Customer</h2>
                         <h1 class="text-2xl font-semibold">{{$order->name}}</h1>
                     </div>
-                    <div class="pt-10">
+                    <div class="pt-6">
                         <h2 class="text-gray-400 font-semibold">Phone Number</h2>
                         <h1 class="text-2xl font-semibold">{{$order->phone}}</h1>
                     </div>
-                    <div class="pt-10">
+                    <div class="pt-6">
                         <h2 class="text-gray-400 font-semibold">Address</h2>
                         <h1 class="text-2xl font-semibold">{{$order->address}}</h1>
                     </div>
-                    <div class="pt-10">
+                    <div class="pt-6">
                         <h2 class="text-gray-400 font-semibold">Postal Code</h2>
                         <h1 class="text-2xl font-semibold">{{$order->postalcode}}</h1>
                     </div>
@@ -231,7 +231,7 @@
                         <h2 class="font-semibold text-white">.</h2>
                         <h1 class="text-2xl font-semibold text-white">.</h1>
                     </div>
-                    <div class="">
+                    <div class="pt-12">
                         <h1 class="text-gray-400 font-semibold">Status</h1>
                         <select class="border-2 rounded-md border-gray-400 px-2 py-1" name="orderstatus">
                             <option value="Cancelled">Cancelled</option>
