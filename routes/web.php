@@ -28,7 +28,7 @@ use App\Http\Controllers\OrderdetailController;
 
 Route::get('/',[ProductController::class,'landingpage'])->name('landing');
 
-Route::get('/landing',[ProductController::class,'landingpage'])->name('landing');
+// Route::get('/landing',[ProductController::class,'landingpage'])->name('landing');
 
 
 Route::get('/signup',[UserController::class,'signuppage'])->name('signup');
