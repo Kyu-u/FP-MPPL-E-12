@@ -256,6 +256,13 @@ class ProductController extends Controller
     }
 
     public function destroyproduct(Request $request){
-        DB::table('wishlist')->where('id_siswa', $id)->delete();
+        $request->validate([
+            'product_id' => 'required',
+            'user_id' => 'required',
+        ]);
+
+        DB::table('wishlists')->where('user_id', $request->get('user_id'))->where('product_id', $request->get('product_id'))->delete();
+
+        return redirect()->route('additem');
     }
 }

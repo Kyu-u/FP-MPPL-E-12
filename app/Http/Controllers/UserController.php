@@ -35,9 +35,14 @@ class UserController extends Controller
 
     public function profilepage()
     {   
-        $user = User::where('id', Auth::user()->id)->get()->first();
         // dd($user);
-        return view('profile', compact('user'));
+        if(Auth::user()){
+            $user = User::where('id', Auth::user()->id)->get()->first();
+            return view('profile', compact('user'));
+        }
+        else{
+            return view('signin');
+        }       
     }
     public function signup(Request $request)
     {
