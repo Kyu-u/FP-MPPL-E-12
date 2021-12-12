@@ -65,7 +65,7 @@
                     </li>
                     <li class="pt-6">
                         <span class="mr-10 font-bold">Phone Number</span>
-                        <span class=""> :</span>
+                        <span class="ml-1"> :</span>
                         <span class="ml-5">{{$user->phone}}</span>
                     </li>
                     <li class="pt-6">
